@@ -1,0 +1,33 @@
+---
+title: Milk Powders
+---
+
+The term "milk powder" usually refers to two specific ingredients:
+
+- Skim Milk Powder (SMP)
+- Whole Milk Powder (WMP)
+
+The goal when manufacturing these ingredients is to reduce moisture. 
+Compositionally, SMP should be equivalent to the skim milk it was made
+from, except that most of the water has been removed.
+
+In other words: the ratio between any two nutrients — like protein and
+lactose — should not be altered, unless a speciality product like
+low-lactose milk is being made.
+
+While there is significant attention paid to isolated and fractionated
+ingredients, such as whey protein isolates, milk powders remain an
+important type of ingredient.
+
+Their virtue lies in their complexity.
+In a bakery product milk powders can
+have multiple functions:
+
+- Lactose contributes a subtle sweetness
+- Milk minerals create saltiness
+- Protein-lactose reactions generate aroma and colour
+
+For more detail on milk powder manufacture consult the references
+consult the references on
+[SMP](../Reference/SMP_process.qmd) and
+[WMP](../Reference/WMP_process.qmd).

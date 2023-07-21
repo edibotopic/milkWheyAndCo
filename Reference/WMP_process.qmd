@@ -1,0 +1,37 @@
+---
+title: WMP Process
+---
+
+The process for WMP is similar to that described for
+[SMP](./SMP_process.qmd) but with some important differences.
+
+Most obviously, the starting material is whole
+milk rather than skim milk.
+The milk will have been standardised to a specific
+fat content of around 3.5% and pasteurised.
+
+Due to the significant presence of fat, milk for
+WMP production must be treated as an unstable
+emulsion.
+Homogenisation is therefore applied to dispersed
+the oil droplets into smaller sizes that float
+more slowly.
+
+Evaporation proceeds as per SMP, with slightly
+lower solids contents achievable due to the
+increased viscosity imparted by the fat.
+
+Most WMP is spray-dried and agglomerated.
+Lecithination is also performed to ensure
+the powder has "instant" properties.
+
+```{mermaid}
+flowchart LR
+A[|borders:n|Whole Milk] --> B(Pre-heat)
+  B --> C(Homogenise)
+  C --> D(Evaporate)
+  D --> E(Dry)
+  E --> F[Lecithinate]
+  F --> G[Package]
+G --> H[|borders:n|WMP]
+```

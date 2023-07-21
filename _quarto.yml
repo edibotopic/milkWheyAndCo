@@ -1,0 +1,57 @@
+project:
+  type: website
+website:
+  title: 'MilkWheyAndCo'
+  navbar:
+    background: primary
+    search: true
+    left:
+      - text: 'Home'
+        file: index.qmd
+      - text: 'Tutorials'
+        file: Tutorials/tutorials.qmd
+      - text: 'How-To'
+        file: Howto/howto.qmd
+      - text: 'Concepts'
+        file: Concepts/concepts.qmd
+      - text: 'Reference'
+        file: Reference/reference.qmd
+      - text: 'Tests'
+        file: Tests/tests.qmd
+
+  sidebar:
+    - title: 'Tutorials'
+      style: 'docked'
+      background: light
+      contents:
+        - Tutorials/tutorials.qmd
+        - Tutorials/tutorial-1.qmd
+
+    - title: 'How-To'
+      contents:
+        - Howto/howto.qmd
+        # navigation items
+
+    - title: 'Concepts'
+      contents:
+        - Concepts/concepts.qmd
+        - Concepts/driedDairy.qmd
+        - Concepts/milkPowders.qmd
+        # navigation items
+
+    - title: 'Reference'
+      contents:
+        - Reference/reference.qmd
+        - Reference/SMP_process.qmd
+        - Reference/WMP_process.qmd
+        # navigation items
+
+    - title: 'Tests'
+      contents:
+        - Tests/tests.qmd
+        - Tests/p5.qmd
+        # navigation items
+format:
+  html:
+    theme: minty
+    toc: true

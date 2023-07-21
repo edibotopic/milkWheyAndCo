@@ -1,0 +1,11 @@
+---
+title: Reference
+---
+
+Reference notes are designed to give you information.
+
+There are deliberately concise and dry in nature.
+
+They are useful for getting the facts you need efficiently
+but it is beneficial and interesting to round out the material
+by reading some of the material in the [Concepts](../Concepts/concepts.qmd) section.

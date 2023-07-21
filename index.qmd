@@ -1,0 +1,32 @@
+---
+title: "Milk, Whey and their Coproducts"
+listing:
+    type: table
+    categories: true
+    fields: [image, title, reading-time]
+---
+
+## Introduction
+
+This website is used for the first half of the FS3016 course.
+
+## Overview
+
+The course can be broadly divided into three sections:
+
+1. Introduction and commodity-type dairy products
+2. Detailed overview of evaporation and drying technology
+3. Speciality dairy ingredients and ingredient functionality
+
+These will be covered — in turn — by Dr Shane Crowley,
+Dr Tom O'Callaghan and Prof Seamus O'Mahony.
+
+## Assessment
+
+This module is delivered in the third year of your program,
+which is truncated because of your work placements/internships.
+For this reason, assessment is kept simple:
+
+**There is one exam at the end of semester worth 100% of your marks.**
+
+## Content

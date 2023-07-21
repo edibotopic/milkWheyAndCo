@@ -1,0 +1,25 @@
+---
+title: Dried Milk Ingredients
+---
+
+Foods like milk are complex mixtures of many different components.
+
+Milk consists of almost 90% water along with molecules that can be substrates
+for bacteriaal growth and enzymatic activity. For these reasons, milk is highly
+perishable.
+
+Drying milk is one of the simplest methods of producing stable dairy
+ingredients, typically yielding a powder that will maintain an acceptable 
+quality for approximately 24 months.
+
+A necessary feature of any milk powder manufacturing process is that the
+milk is dried to approximately 5% water.
+
+When you are trying to recall how a given powder is manufactured, 
+it can be useful to first write down the starting material and
+then the final drying step.
+All processes we will encounter have a specific input and
+are finally dried into a powder.
+
+To understand individual processes you will need to fill in
+the steps between.

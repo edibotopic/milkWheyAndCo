@@ -1,0 +1,14 @@
+---
+title: Concepts
+categories: [stuff, things]
+---
+
+Notes on Concepts are exploratory in nature and try to connect different ideas together.
+
+They include facts but also some general discussion that provides additional context.
+
+This can involve thinking why what we are learning is important and how we can approach
+the topics.
+
+Often they push us beyond the facts, as we try to find interesting connections or 
+directions that engage our minds.

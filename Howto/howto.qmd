@@ -1,0 +1,11 @@
+---
+title: How-to
+---
+
+A how-to is a recipe consisting of steps.
+
+It is short and designed to help you do something.
+
+They might involve doing a calculation or recreating a process in your kitchen.
+
+Completing the steps should always lead to the same outcome.

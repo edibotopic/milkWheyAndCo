@@ -1,0 +1,12 @@
+---
+title: Tutorials
+---
+
+Tutorials aim to give you some
+*practical* knowledge about solving
+problems while you study the course.
+
+They typically involve a problem-solving
+scenario, in which you apply knowledge 
+from the course to find a solution or
+set of possible solutions.
