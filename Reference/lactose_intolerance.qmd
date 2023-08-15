@@ -1,0 +1,82 @@
+---
+title: Lactose Intolerance
+categories: [reference, lactose, chemistry, intolerance]
+---
+
+For most mammals, milk consumption is a feature
+of infant life. As mammals reach maturity they 
+no longer consume milk as a primary source of 
+nourishment.
+
+Physiologically, most mature mammals are not 
+capable of digesting lactose, at least not in 
+a healthy manner. This is because the activity
+of the enzyme needed to breakdown lactose 
+decreases as the mammal matures.
+
+Most humans --- like most mammals --- are unable
+to digest lactose into maturity. An estimated
+70-80% of people in the world today are 
+**lactose intolerant**. This makes countries
+like Ireland and Sweden --- where most people 
+are not lactose intolerant --- the exception
+rather than the rule.
+
+Lactose intolerance is not an allergy and does 
+not involved any immune response to lactose.
+The symptoms of lactose are associated with 
+a lack of enzyme activity that results in 
+the persistence of sugar in the intestine.
+The enzyme in question is $\beta$-galactosidase
+or --- in short --- lactase. In most infants,
+there is sufficient lactase to hydrolyse
+lactose into galactose and glucose. This is 
+important, as these mono-saccharides can 
+permeate the intestinal barrier, while the 
+bulkier di-saccharide lactose cannot. If 
+lactose is hydrolysed the smaller sugars
+enter the bloodstream and are metabolised,
+but if they are not they persist in the 
+intestine, where they generate osmotic
+pressure. This creates an osmotic drive
+that results in water being drawn into 
+the intestine, which can lead to 
+unpleasant symptoms (bloating, diarrhoea).
+In addition, lactose can be fermented by 
+bacteria in the large intestine; like 
+most fermentations, this results in 
+reaction products like gases and acids,
+which cause further unpleasant symptoms.
+
+:::{.callout-tip}
+It is very important to note that the symptoms
+of lactose intolerance are not necessarily 
+induced on consumption of any dairy product.
+A person with lactose-intolerance can 
+consume approximately 11 g/day of lactose. 
+While a 250 mL glass of milk would likely 
+push someone over this limit, a few slices
+of hard cheese may not. To understand why,
+consider that whey is removed during cheese-
+making, but most of the lactose is in the whey.
+In addition, during ripening, some of the residual 
+lactose is fermented into other sugars. Thus, in 
+terms of lactose-intolerance, not all dairy products 
+are created equal!
+:::
+
+While lactose intolerant individuals can consume some dairy products in significant quantities (see box above), products like drinking milk can cause symptoms
+at low consumption levels. For this reason there are efforts to reduce lactose levels in these products.
+Sports supplements like casein and whey protein 
+powders are very low in lactose (they are around 90%
+protein after all). These materials are low in lactose by virtue of the filtration and washing steps applied during processing, which concentrate protein and deplete everything else. To make drinking milk it is 
+not desirable to deplete these other components to this degree (the milk would not taste very nice). A 
+common approach is therefore to remove a proportion of lactose by ultrafiltration, and then add lactase 
+to hydroylse the remainder of lactose. This has two clear advantages:
+
+1. It reduces the level of lactose to a negligible level
+2. It converts any residual lactose to sweeter sugars, compensating for the reduction in sweetness associated with the decreased lactose
+
+:::{.callout-note}
+It should be noted that lactose intolerance is different from galactosaemia, a genetic condition that causes individuals to have severe, often life-threatening reactions to the presence of galactose in a food. This condition is tested for at birth and is known to affect some demographic groups more than others, such as the Irish Traveller population. About 1 in 450 births in the traveller community are associated with galactosaemia, compared with 1 in 19,000 in the general population. Detection of this condition usually requires a highly restrictive diet to be adopted by the afflicted individual.
+:::

@@ -1,0 +1,30 @@
+---
+title: WP Process
+categories: [reference, whey, crystallisation, lactose]
+---
+
+A general flow diagram for Whey Powder (WP) is shown below:
+
+```{mermaid}
+%%| label: fig-WP-embed
+%%| fig-cap: "Whey Powder flow diagram"
+%%| file: ../Diagrams/WP.mmd
+```
+
+Whey for processing into WP has been clarified and
+pasteurised.
+
+The whey is evaporated to 50-60% solids in an evaporator.
+
+The concentrated whey is pumped into crystallisation tanks.
+
+To promote lactose crystallisation the following conditions are required:
+
+- Seeding with lactose crystals
+- Gentle agitation
+- Low temperature
+
+These conditions are carefully controlled to ensure that 
+a suspension of fine crystals is formed.
+
+The concentrated, precrystallised whey is then spray-dried into a powder.

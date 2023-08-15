@@ -1,0 +1,30 @@
+---
+title: Fines Recovery
+categories: [reference, casein, optimisation, yield]
+---
+
+Processes for the manufacture of precipitated 
+casein ingredients — like ACN and RCN — rely
+on centrifuges to separate casein curd particles
+from liquid whey.
+
+The centrifuges used for dewheying and dewatering are not
+100% efficient.
+The recovered whey and water will often contain small
+curd particles called "fines".
+
+A "clarification" step is often applied to these streams.
+This has two benefits:
+
+1. Casein is recovered that can be reintroduced to the process to improve yield
+2. Particles are removed from whey making it easier to process further
+
+The fines that are recovered can be resolubilised by alkalisation.
+The resultant soluble casein can then be mixed with milk that is
+to be converted into acid casein.
+
+```{mermaid}
+%%| label: fig-fines-embed
+%%| fig-cap: "Fines Recovery flow diagram"
+%%| file: ../Diagrams/fines_recover.mmd
+```

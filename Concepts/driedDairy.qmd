@@ -1,5 +1,6 @@
 ---
 title: Dried Milk Ingredients
+categories: [concepts, drying]
 ---
 
 Foods like milk are complex mixtures of many different components.

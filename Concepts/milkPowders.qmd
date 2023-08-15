@@ -1,5 +1,6 @@
 ---
 title: Milk Powders
+categories: [concepts, milk powders]
 ---
 
 The term "milk powder" usually refers to two specific ingredients:

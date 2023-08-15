@@ -1,0 +1,108 @@
+---
+title: Milk Minerals
+categories: [reference, minerals, chemistry, calcium, acid whey, casein micelle]
+---
+
+The mineral system of milk is incredibly complex. Its mineral 
+content is generally represented by an `ash` value that is typically
+approximately 0.8%. This seemingly small number, however, masks the 
+fact that there are a wide range of minerals, some of which play an 
+out-sized role in determining the functional properties of dairy 
+products. One of the most important milk minerals is **calcium**,
+which will be the focus of this section.
+
+# Calcium Equilibria in Milk 
+
+Normally when we think of "phases" we think of solid, gas and liquid.
+In dairy chemistry, it is also common to hear talk of a "micellar" phase 
+and a "serum" phase. Technically, the casein micelles in milk are not 
+soluble like the whey proteins are: rather, they are in a stable,
+colloidal suspension.
+
+The movement of molecules and ions between these two phases is important 
+in dairy chemistry and it has several practical implications; for example,
+in the previous section we encountered how heating can influence the 
+behaviour of calcium in milk resulting CCP formation and acidification, which can be illustrated in chemical notation as:
+
+$$3Ca^{2+} + 2HPO^{2-}_4 \rightarrow Ca_3(PO_4)_2 + 2H^+$$
+
+Milk consists of 1200 mg/L calcium but about 2/3rds of this is in the 
+micellar phase at native pH. Of the 800 mg/L of phosphorus approximately
+50% is in the colloidal phase. The reason for the high proportion of both 
+is that they exist there together as a complex known as "colloidal calcium phosphate" or CCP for short.
+
+Occasionally, researchers refer to the calcium present in this form as 
+"insoluble" calcium, because it is present in a complex with phosphate
+that is associate with a micelle structure that is not soluble.
+
+## Factors influencing Calcium Equilibria 
+
+There are several factors that affect the equilibrium of 
+calcium between the micellar and serum phase:
+
+* *Acidification*: decreases CCP 
+* *Alkalisation*: increases CCP 
+* *Heating*: increases CCP 
+* *Cooling*: decreases CCP
+* *Concentration*: increases CCP
+* *Calcium fortification*: increases CCP
+* *Calcium binder addition*: decreases CCP 
+
+Many other factors have been studied, including 
+high pressure, sonication and freezing, but these
+will not concern us here.
+
+These factors can influence quality traits of dairy products.
+The simplest example is the ultrafiltration of milk. When milk 
+is ultrafiltrated all of its proteins are concentrated, along with 
+any associated minerals, including CCP. It is possible --- of course ---
+to adjust the pH or temperature of the milk prior to filtration. By
+cooling we can deplete the milk of calcium (dissociated ions removed in permeate), by alkalising we can increase 
+calcium (micellar calcium concentrated in retentate) and so on. Whether these changes are desirable will depend on the 
+final product (nutritional beverage versus cheese versus soluble powder).
+
+:::{.callout-tip}
+Remember that CCP requires two materials to be present: casein micelles and calcium phosphate. In the absence of casein micelles, regular calcium phosphate
+salt will form. This is a very different thing, with very different consequences. We can **concentrate** milk without concern for the calcium phosphate, which will be stabilised by the micelles, but when concentrating whey the same minerals can cause problems.
+:::
+
+Other effects are also notable. Concentration of 
+milk solids --- by evaporation for example --- results in further saturation of the serum phase with calcium and phosphate ions, resulting in CCP formation and therefore acidification:
+
+$$3Ca^{2+} + 2HPO^{2-}_4 \rightarrow Ca_3(PO_4)_2 + 2H^+$$
+
+While the inverse operation (dilution) causes the dissociation of CCP and an increase in pH:
+
+$$Ca_3(PO_4)_2 + H_2O\rightarrow 3Ca^{2+} + 2HPO^{2-}_4 + 2OH^-$$
+
+The freezing of milk is similar to a concentration operation with respect to its effect on calcium, as water that has crystallised is unable to dissolve salts, so the remaining unfrozen water becomes supersaturated with calcium and phosphate, leading to significant CCP precipitation and extensive acidification (this is a reason why freezing of milk can cause instability).
+
+# Comparing skim milk and acid whey 
+
+One of the most remarkable things about milk is the following:
+
+> Milk contains more calcium and phosphate than should otherwise be allowed by nature
+
+What this means, is that if we transferred the entire mineral profile of milk to a glass of water the same minerals --- especially calcium phosphate --- would sediment and fall out of suspension.
+
+The biological explanation for this property of milk is that unstable calcium 
+phosphate would cause injury while the mammal is generating milk. There is thus an evolutionary advantage to synthesising structures (micelles) that carry the minerals in a stable form so that they can feed the young of the species.
+
+However, during dairy processing the minerals are often separated from the stabilising vehicle, which can have important practical consequences.
+
+In milk, shifts in calcium equilibria between the micellar and serum phases do not typically result in destabilisation of the calcium phosphate itself. CCP in the micellar phase is present in form of nanoclusters, of 1-2 nm in diameter. The nanoclusters are extremely small, non-crystalline and remain stable with the micelles. 
+
+If we take milk and acidify it to pH 4.6 the majority of the calcium and phosphate becomes solubilised, while the casein precipitates. If the casein is removed we are left with an **acid whey** that contains effectively all of the calcium and phosphate from the milk. Now, if the conditions of the acid whey are changed to shift the calcium equilibrium towards the formation of calcium phosphate the consequences are different than for milk.
+
+If acid whey is concentrated by --- for example --- evaporation, the calcium phosphate will tend to precipitate into large micron-sized crystals. These crystals are dense (tend to sediment rapidly) and abrasive (tend to damage equipment). Any elevation in temperature or pH during processing is likely to cause significant destabilisation during acid whey processing --- these effects will be most pronounced in concentrated systems, as calcium phosphate becomes less soluble as its concentration increases.
+
+Any phenomenon like this can be cast in a positive or negative light depending on the needs of the processor and their goals. If the destabilisation is a problem then the manufacturer needs to be careful about processing parameters that impact calcium phosphate solubility.
+
+On the other hand, there is a market for *milk minerals* as a nutritional ingredient. If a manufacturer wishes to manufacture this ingredient then acid whey is an excellent raw material. In this case, the manufacturer targets conditions that promote the precipitation of calcium phosphate, for example:
+
+* Concentrate the whey 
+* Alkalise the whey
+* Heat they whey
+* Agitate to allow precipitation
+
+The insoluble calcium phosphate particles can then be easily recovered using a gentle centrifugation method, such as a hydrocyclone. The centrifugation technique need only be "gentle" (i.e., a relatively low g-force) because calcium phosphate particles are incredibly dense (ca. 1.7 ml/g) and would sediment under gravity given sufficient time. The material can be milled and dried to create a supplement suitable for human consumption.

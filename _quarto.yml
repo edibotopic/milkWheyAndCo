@@ -1,23 +1,28 @@
 project:
   type: website
+  output-dir: docs
 website:
   title: 'MilkWheyAndCo'
+  site-url: 'https://edibotopic.github.io/MilkWheyAndCo/'
+  repo-url: https://github.com/edibotopic/MilkWheyAndCo
+  repo-actions: [edit, issue, source]
   navbar:
+    # TODO: downloads: [pdf, epub]
     background: primary
     search: true
     left:
       - text: 'Home'
         file: index.qmd
+      - text: 'Reference'
+        file: Reference/reference.qmd
+      - text: 'Concepts'
+        file: Concepts/concepts.qmd
       - text: 'Tutorials'
         file: Tutorials/tutorials.qmd
       - text: 'How-To'
         file: Howto/howto.qmd
-      - text: 'Concepts'
-        file: Concepts/concepts.qmd
-      - text: 'Reference'
-        file: Reference/reference.qmd
-      - text: 'Tests'
-        file: Tests/tests.qmd
+      - text: 'About'
+        file: About/about.qmd
 
   sidebar:
     - title: 'Tutorials'
@@ -25,33 +30,58 @@ website:
       background: light
       contents:
         - Tutorials/tutorials.qmd
-        - Tutorials/tutorial-1.qmd
+        - Tutorials/heatClassSupply.qmd
+        - Tutorials/caseinYield.qmd
+        - Tutorials/acidWheyUse.qmd
 
     - title: 'How-To'
       contents:
         - Howto/howto.qmd
-        # navigation items
+        - Howto/acidCasein.qmd
+        - Howto/sodiumCaseinate.qmd
+        - Howto/functionality.qmd
+        - Howto/fetchingData.qmd
 
     - title: 'Concepts'
       contents:
         - Concepts/concepts.qmd
         - Concepts/driedDairy.qmd
+        - Concepts/driedEmulsions.qmd
         - Concepts/milkPowders.qmd
-        # navigation items
+        - Concepts/chemicalAndPhysical.qmd
+        - Concepts/wheyDerivedIngredients.qmd
+        - Concepts/concFracEnrich.qmd
 
     - title: 'Reference'
       contents:
         - Reference/reference.qmd
         - Reference/SMP_process.qmd
         - Reference/WMP_process.qmd
-        # navigation items
+        - Reference/RCN_process.qmd
+        - Reference/ACN_process.qmd
+        - Reference/precipitate_washing.qmd
+        - Reference/fines_recovery.qmd
+        - Reference/whey_process.qmd
+        - Reference/wpc_process.qmd
+        - Reference/wpi_process.qmd
+        - Reference/lactose_process.qmd
+        - Reference/heat_stability.qmd
+        - Reference/milk_minerals.qmd
+        - Reference/lactose_chemistry.qmd
+        - Reference/lactose_intolerance.qmd
 
     - title: 'Tests'
       contents:
         - Tests/tests.qmd
         - Tests/p5.qmd
-        # navigation items
+        - Tests/cooklang_clean.qmd
+        - Tests/embedDiagrams.qmd
+        - Tests/api_fetch.qmd
 format:
   html:
-    theme: minty
+    theme: 
+      light: [minty, theme.scss]
+      dark: cyborg
     toc: true
+  # pdf:
+  #   latex-output-dir: ./pdf

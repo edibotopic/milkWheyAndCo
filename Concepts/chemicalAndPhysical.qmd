@@ -1,0 +1,27 @@
+---
+title: Casein and Coproducts
+categories: [concepts, casein]
+---
+
+Traditionally casein was separated from milk
+by precipitation.
+There are two broad approaches to precipitation:
+
+- Chemical: isolectric precipitation using acid
+- Biochemical: enzymatic precipitation using rennet
+
+More recently physical methods of separation were
+introduced, typically relying on membranes.
+One advantage of physical methods is that they do
+not generate an insoluble material.
+
+Below is a general diagram that provides an
+overview of the main casein-dominant ingredients
+that can be produced using these methods along
+with their co-products.
+
+```{dot}
+//| label: fig-chemandphys-embed
+//| fig-cap: "Precipitation-based methods"
+//| file: ../Diagrams/precipitation.dot
+```

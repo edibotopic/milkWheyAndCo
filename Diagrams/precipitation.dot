@@ -1,0 +1,27 @@
+graph G {
+  layout=neato;
+  overlap=false;
+
+  "skim milk" -- chemical;
+  "skim milk" -- physical;
+  "skim milk" -- biochemical;
+
+  chemical -- acid;
+  biochemical -- enzyme;
+  physical -- membrane;
+
+  enzyme -- "rennet casein";
+  acid -- "acid casein";
+  "acid casein" -- alkali;
+  alkali -- "sodium caseinate"
+
+  membrane -- ultrafiltration;
+  membrane -- microfiltration;
+  ultrafiltration -- MPC;
+  microfiltration -- MCC;
+
+  acid -- "acid whey"
+  enzyme -- "rennet whey"
+  ultrafiltration -- "milk permeate"
+  microfiltration -- "native whey"
+}

@@ -1,0 +1,14 @@
+flowchart LR
+
+A[|borders:n|Acidified milk] --> B(Dewhey)
+B --> C(Wash I)
+C --> D(Wash II)
+D --> E(Wash III)
+E --> F(Casein)
+
+E --"water"--> D
+D --"water"--> C
+
+B --> J[|borders:n|Whey]
+
+K[|borders:n|Fresh water]  -->E(Wash III) 

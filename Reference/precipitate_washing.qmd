@@ -1,0 +1,20 @@
+---
+title: Multi-stage Washing
+categories: [reference, casein, optimisation, water]
+---
+
+Precipitated casein ingredients — like ACN and RCN —
+involve the separation of casein curds from liquid whey.
+The casein curd needs to be washed to increase purity and
+this often takes place in multiple stages.
+
+If there is a washing stage $n$ the subsequent step $n+1$
+will generate wash water with a lower residual lactose.
+Fresh water only needs to be generated for the final washing stage.
+This has the obvious benefit of reducing overall water use.
+
+```{mermaid}
+%%| label: fig-WASH-embed
+%%| fig-cap: "Washing flow diagram"
+%%| file: ../Diagrams/washing.mmd
+```

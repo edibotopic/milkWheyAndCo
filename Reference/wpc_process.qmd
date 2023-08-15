@@ -1,0 +1,26 @@
+---
+title: WPC Process
+categories: [reference, whey, filtration, protein, concentrate]
+---
+
+A general flow diagram for WPC is shown below:
+
+```{mermaid}
+%%| label: fig-WPC-embed
+%%| fig-cap: "Whey Protein Concentrate flow diagram"
+%%| file: ../Diagrams/WPC.mmd
+```
+
+Whey for processing into WPC has been clarified and
+pasteurised.
+
+The whey is ultrafiltered using a membrane with a MWCO
+of 5-10 kDa.
+
+As whey permeate is generate the volume of WPC is decreased
+and the protein:lactose ratio increases.
+
+For the highest protein contents diafiltration with water is required.
+
+After ultrafiltration/diafiltration the WPC is concentrated and dried.
+Care is taken during these thermal treatments to prevent excessive denaturation.

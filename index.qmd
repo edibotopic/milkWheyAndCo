@@ -4,29 +4,132 @@ listing:
     type: table
     categories: true
     fields: [image, title, reading-time]
+css: styles.css
 ---
 
 ## Introduction
 
-This website is used for the first half of the FS3016 course.
+Milk is a complex, multi-component system.
+In addition to traditional products like
+ice-cream and butter, milk is commonly
+transformed into a variety of dried
+ingredients.
+These range from commodities such as
+milk powder to more specialised ingredients
+like glycomacropeptide.
+Commodity-type ingredients are present in
+a wide variety of everyday foods, including
+bread, soups and chocolate, while specialised
+ingredients are often used in nutritional and 
+medical applications.
 
-## Overview
+This website contains notes to accompany
+the first half of the FS3016 module
+*Ingredient Recovery from Milk, Whey and their Coproducts*,
+which is taught to Food Science students at University College Cork.
+The module covers how dried dairy ingredients are manufactured, what
+waste-utilisation strategies are used and which functions specific
+ingredients have in food applications.
+
+::: {.callout-warning}
+
+The site is **under construction**.
+
+It is due to be complete for students 
+commencing their studies in January 2024.
+
+:::
+
+## Delivery
 
 The course can be broadly divided into three sections:
 
-1. Introduction and commodity-type dairy products
+1. Introduction to the module and commodity-type dairy products
 2. Detailed overview of evaporation and drying technology
-3. Speciality dairy ingredients and ingredient functionality
+3. Speciality dairy fractions and ingredient functionality
 
 These will be covered — in turn — by Dr Shane Crowley,
 Dr Tom O'Callaghan and Prof Seamus O'Mahony.
 
 ## Assessment
 
-This module is delivered in the third year of your program,
+This module is delivered in the third year of your degree program,
 which is truncated because of your work placements/internships.
 For this reason, assessment is kept simple:
 
 **There is one exam at the end of semester worth 100% of your marks.**
 
+## The Website
+
+The following sections provide some information on the
+design approach taken with the website.
+
+### Structure
+
+These notes are designed according to the [Diátaxis](https://diataxis.fr/) framework.
+They are divided into four main categories:
+
+1. **Tutorials** aim to give you some practical knowledge about solving problems while you study the course.
+2. **How-tos** are short sets of instructions designed to help you achieve something.
+3. **Concepts** are exploratory in nature and try to connect different ideas together to form explanations.
+4. **Reference** notes are designed to give you concise, factual information.
+
+In university courses these different sections are often mixed together, resulting in large bodies of
+text that require students to adapt to different styles of thinking at regular intervals.
+Diátaxis allows these notes to be presented in smaller units that can be studied in isolation before
+combining them together at a later stage.
+
+While studying the module you may find different sections more helpful than others.
+*References* are essential to learn factual material but can become dry and abstract.
+*Concepts* can be interesting and refreshing but challenging to grasp quickly.
+*Tutorials* can give insights into practical applications of knowledge but may not be immediately useful.
+*How-tos* can get you some practical results quickly but they are necessarily narrow in scope.
+
+While each section has its limitations they should work together to form an effective whole.
+Each student may choose to integrate the information in their own way and to give themselves
+the best chance at succeeding in the assessment.
+
+### Formats
+
+The notes are designed both for web and pdf.
+Files in `.pdf` format will be made available (soon) to accompany the notes
+
+Interactive content, including slides and animations, is embedded
+within the notes in the web version (recommended).
+
+::: {.content-visible when-format="html"}
+
+For example, you can click through the introductory slides below.
+
+<div>
+```{=html}
+<iframe class="slide-deck" src="Slides/one/"></iframe>
+```
+</div>
+
+:::
+
+::: {.content-visible when-format="pdf"}
+
+For example, on the website this section includes
+a set of interactive slides.
+
+:::
+
+### Sources
+
+The course notes are published as an Open-Source repository on GitHub.
+If you have a GitHub profile you are free to edit the material and submit your changes.
+
+All diagrams are written in plain text in a `/Diagrams/` folder using the Mermaid and Dot languages.
+
+Recipes are created using the CookLang markup language in `/Recipes/`.
+This allows them to be written in a style close to natural language
+before they are automatically parsed to generate lists of steps and tables of data.
+
+With this setup it is easy to update diagrams and recipes, which can then be
+transcluded from a single source to multiple outputs (e.g., slides, web, pdf).
+
 ## Content
+
+Listings are provided below for quick searching of module content.

@@ -1,0 +1,51 @@
+---
+title: Lactose Process
+categories: [reference, whey, food-grade, pharma-grade, crystallisation, sugar]
+---
+
+# Food-grade
+
+A general flow diagram for food-grade lactose is shown below:
+
+```{mermaid}
+%%| label: fig-LAC-embed
+%%| fig-cap: "Lactose flow diagram"
+%%| file: ../Diagrams/LAC.mmd
+```
+
+Whey that has been deproteinised is concentrated by evaporation.
+The concentrated lactose-rich solution is then crystallised
+with appropriate lactose seeding, agitation and cooling.
+
+Crystals are recovered by decanter centrifugation.
+These crystals are then washed before drying, usually
+using a fluidised bed drier.
+
+Delactosed whey is generated from the first centrifugation and
+wash water from subsequent centrifugations; hydrocyclones may
+be used to recover additional lactose from these streams.
+
+Food-grade lactose usually has a purity of 99.0-99.5% and is
+yellowish in colour.
+
+# Pharma-grade
+
+The process for manufacturing pharma-grade lactose
+is similar to the process for food-grade lactose.
+
+A greater purity (99.5-99.9%) is targeted.
+
+To achieve this the process starts with food-grade
+lactose as the input material.
+The lactose is dissolved and subjected to treatments
+intended to reduce levels of residual, non-lactose
+components.
+
+Common treatments include:
+
+- Boiling in calcium phosphate to remove proteose-peptone
+- Treatment with activated charcoal to recover riboflavin
+
+The lactose is then crystallised, centrifuged, washed and
+dried as before to yield a more pure lactose powder that
+is usually white in colour.

@@ -1,0 +1,14 @@
+---
+title: Acid Casein
+format:
+  html:
+    code-fold: true
+    css: styles.css
+categories: [how-to, casein]
+---
+
+{{< include ../Templates/cooklang.qmd >}}
+
+```{ojs}
+recipeToParse = FileAttachment("../Recipes/acidCasein.cook").text()
+```

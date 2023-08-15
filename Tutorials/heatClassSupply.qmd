@@ -1,0 +1,49 @@
+---
+title: Heat Classes
+---
+
+::: {.callout-important}
+
+## Problem
+
+Your company receives an inquiry
+about skim milk powder.
+
+They will be using the milk powder
+to increase the solids content of
+their product.
+
+Determine which milk powder might
+be suitable for their application.
+
+:::
+
+## Approach
+
+It can be taken for granted that most
+customers will expect good standards of
+quality and functionality.
+While there are some notable exceptions,
+this customer will likely want an instantised
+powder, for example.
+
+The primary distinction between
+SMPs is heat-classification.
+This determines the extent to which
+the casein micelles in the system
+are stable to external destabilising
+factors.
+
+If the customer is developing a product
+that requires stability to be maintained
+then they should be supplied with a 
+medium- or high-heat SMP.
+
+On the other hand, if the product will be
+destabilised then they will likely need a
+low-heat SMP.
+
+Two examples might be:
+
+- Sterilised clinical nutrition beverage: high-heat
+- Standardised cheese milk: low-heat

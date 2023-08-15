@@ -1,0 +1,8 @@
+| Milk Powders     | Casein-based    | Whey-derived             | Other                           |
+|------------------|-----------------|--------------------------|---------------------------------|
+| Skim Milk        | Acid Casein     | Whey Powder              | Micellar Casein                 |
+| Whole Milk       | Rennet Casein   | Whey Protein Concentrate | Milk Protein Concentrate        |
+|                  | Caseinate       | Whey Protein Isolate     | Reduced-lactose powders         |
+|                  |                 | Lactose                  |                                 |
+
+: {.striped}

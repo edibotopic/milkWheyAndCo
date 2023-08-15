@@ -1,0 +1,366 @@
+[
+  {
+    "objectID": "Templates/cooklang.html",
+    "href": "Templates/cooklang.html",
+    "title": "MilkWheyAndCo",
+    "section": "",
+    "text": "Ingredients\n\n\n\nMethod\n\n\n\n\n\nCL = (await import(\"https://cdn.skypack.dev/@cooklang/cooklang-ts@1.2.0?min\"))\n  .default\n\n\n\n\n\n\n\ndefaultRecipe = `&gt;&gt; title: A Cooklang Recipe\n&gt;&gt; source: https://www.anywebsite/with-details-on-the-recipe/\n\nYou add an @ingredient{} with an unspecified quantity.\n\nYou mix another @material(3%g) with a specified quantity.\n\nYou use equipment like a #bowl for certain times like ~{15%minutes}.\n\n-- NOTE: you can add comments that won't be printed`\n\n\n\n\n\n\n\nparsedRecipe = new CL.Recipe(recipeToParse)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nfunction cooklangObjectToText(s) {\n  const { type, value, name, quantity, units } = s;\n  if (type === \"ingredient\" && quantity === \"some\" && units === \"\") {\n    return `${s.name} (${s.quantity})`;\n  }\n  if (type === \"ingredient\" && units === \"\") {\n    return `${s.quantity} ${s.name}`;\n  } else if (type === \"ingredient\") {\n    return `${s.name} (${s.quantity} ${s.units})`;\n  } else if (type === \"timer\") {\n    return `${s.quantity} ${s.units}`;\n  }\n  return `${s.name} (${s.quantity}${s.units})`;\n}\n\n\n\n\n\n\n\nfunction descriptionAsHTML(recipe) {\n  const description = parsedRecipe?.metadata?.description;\n  if (description) {\n    return htl.html`&lt;br&gt;&lt;p&gt;${parsedRecipe.metadata.description}&lt;/p&gt;`;\n  }\n}\n\n\n\n\n\n\n\nfunction ingredientsAsHTML(recipe) {\n  const ingredients = recipe.ingredients ?? [];\n\n  return htl.html`&lt;table&gt;\n    &lt;tr&gt;\n        &lt;th&gt;Type&lt;/th&gt;\n        &lt;th&gt;Quantity&lt;/th&gt;\n    &lt;/tr&gt;\n ${ingredients.map((ing) =&gt; {\n   return htl.html`&lt;tr&gt;\n    &lt;td&gt;${ing?.name}&lt;/td&gt;\n    &lt;td&gt;${ing?.quantity} ${ing?.units}&lt;/td&gt;\n  &lt;/tr&gt;`;\n })}\n&lt;/table&gt;`;\n}\n\n\n\n\n\n\n\nfunction preparationAsHTML(recipe) {\n  const steps = recipe.steps ?? [];\n\n  return md`${steps\n    .map((p) =&gt; {\n      return p\n        .map((s) =&gt; {\n          return s.type === \"ingredient\" || s.type === \"timer\"\n            ? `**${cooklangObjectToText(s)}**`\n            : s.type === \"text\"\n            ? s.value\n            : s.name;\n        })\n        .join(\"\");\n    })\n    .join(\"\\n\\n\")}`;\n}\n\n\n\n\n\n\n\nfunction footerMetaAsHTML(recipe) {\n  const source = parsedRecipe?.metadata?.source;\n  if (source) {\n    return md`**Reference:**&lt;br&gt;${source}`;\n  }\n  return \"\";\n}"
+  },
+  {
+    "objectID": "Reference/lactose_chemistry.html",
+    "href": "Reference/lactose_chemistry.html",
+    "title": "Lactose Chemistry",
+    "section": "",
+    "text": "Lactose is the primary sugar in most dairy products. While there is often a significant amount of attention paid to the economics of milkfat or the nutritional properties of milk proteins, lactose remains an important industrial product in its own right.\n\nBasic chemistry\nLactose is a di-saccharide, meaning it consists of two sub-units or “moieties”.\nThe moieties in this case are galactose and glucose, both of which are mono- saccharides. These are connected to each other by a \\(\\beta\\) 1,4 glycosidic linkage.\nLactose has an anomeric carbon, and the orientation of the hydroxyl group around this carbon determines the form of the lactose (see figure).\nThe equilibrium between alpha and beta lactose results in a particular ratio of the two anomeric forms. You could try to find what this ratio is and the factors that influence it.\nThe two anomeric forms — \\(\\alpha\\) and \\(\\beta\\) — have some important physical differences that affect their behaviour. In a solution of lactose the two forms exist in an equilibrium.\n\n\nQualities\nLactose is considered a “mild” sugar, in that its sweetness is significantly lower than sugars like sucrose and glucose.\nA reducing sugar, lactose can participate in Maillard browning reactions with proteins, which is why lactose is frequently used in bakery products where it contributes to color, flavour and aroma.\n\n\n\nSweetness of common sugars relative to sucrose; note that glucose and galactose are sweeter than lactose\n\n\nSugar\nSweetness\n\n\n\n\nsucrose\n1.0\n\n\nfructose\n1.2-1.8\n\n\nglucose\n0.6\n\n\nmaltose\n0.5\n\n\ngalactose\n0.32\n\n\nlactose\n0.15-0.30\n\n\n\nThe solubility of lactose is low relative to other sugars, which can contribute to crystallisation that is a source of quality defects in dairy products and an opportunity to purify lactose in manufacturing.\nLastly, lactose is an important substrate in fermentations involving lactic acid bacteria, and contributes in this way to the acidification reactions in yoghurt and lactic acid casein.\n\n\nSolubility\nAt ambient temperature the solubility of lactose is approximately 18.2 g/100 mL.\nThis solubility refers to the solubility of all the lactose in the system, but it should be noted that lactose in solution exists in two anomeric forms simultaneously. Each of these forms has their own solubility value at a given set of environmental conditions. Generally, the beta form is more soluble than the alpha form, which makes it easy to recover the alpha form as crystals. At very high temperatures the beta form becomes less soluble, making it possible to collect beta crystals more easily.\nIn the pharmaceutical industry both forms of lactose ingredient are supplied to different companies, depending on their needs. The initial solubility of beta-lactose is higher than alpha-lactose, meaning — for example — that it would melt more quickly in saliva.\n\n\n\n\n\n\nNote\n\n\n\nIt should be noted that if a pure form of either alpha or beta lactose is dissolved in water the natural equilibrium between the two will be restored. Thus, although beta-lactose has a higher initial solubility limit than lactose, a significant proportion of it will convert into alpha-lactose in solution, meaning that the solubility limit will gradually approach that of alpha-lactose.\n\n\nIf the concentration of lactose is increased, by removing water or adding lactose, the solution will become supersaturated and eventually crystallise.\nThe solubility of lactose decreases as temperature is lowered. Ideal conditions for crystallisation can therefore be expected to require a low temperature as well as a concentrated system."
+  },
+  {
+    "objectID": "Reference/lactose_process.html",
+    "href": "Reference/lactose_process.html",
+    "title": "Lactose Process",
+    "section": "",
+    "text": "Food-grade\nA general flow diagram for food-grade lactose is shown below:\n\n\n\n\n\nflowchart LR\n\nA[|borders:n|Whey permeate] --&gt; B(Evaporate)\n\nB --&gt; C(Crystallisation)\n\nC --&gt; D(Centrifugation)\n\nD --&gt; E(Washing)\n\nE --&gt; F(Drying)\n\nF --&gt; G[|borders:n|Lactose]\n\nD --&gt; X[|borders:n|Delactosed whey]\n\nY[|borders:n|Water] --&gt; E\n\n\nFigure 1: Lactose flow diagram\n\n\n\n\nWhey that has been deproteinised is concentrated by evaporation. The concentrated lactose-rich solution is then crystallised with appropriate lactose seeding, agitation and cooling.\nCrystals are recovered by decanter centrifugation. These crystals are then washed before drying, usually using a fluidised bed drier.\nDelactosed whey is generated from the first centrifugation and wash water from subsequent centrifugations; hydrocyclones may be used to recover additional lactose from these streams.\nFood-grade lactose usually has a purity of 99.0-99.5% and is yellowish in colour.\n\n\nPharma-grade\nThe process for manufacturing pharma-grade lactose is similar to the process for food-grade lactose.\nA greater purity (99.5-99.9%) is targeted.\nTo achieve this the process starts with food-grade lactose as the input material. The lactose is dissolved and subjected to treatments intended to reduce levels of residual, non-lactose components.\nCommon treatments include:\n\nBoiling in calcium phosphate to remove proteose-peptone\nTreatment with activated charcoal to recover riboflavin\n\nThe lactose is then crystallised, centrifuged, washed and dried as before to yield a more pure lactose powder that is usually white in colour."
+  },
+  {
+    "objectID": "Reference/RCN_process.html",
+    "href": "Reference/RCN_process.html",
+    "title": "RCN Process",
+    "section": "",
+    "text": "A general flow diagram for RCN is shown below:\n\n\n\n\n\nflowchart LR\nA[|borders:n|Skim Milk] --&gt; B(Incubate)\n  B --&gt; C(Dewhey)\n  C --&gt; D(Wash)\n  D --&gt; E(Dewater)\n  E --&gt; F(Dry)\nF --&gt; G[|borders:n|RCN]\n\nH[|borders:n|Rennet] --&gt; B(Incubate)\n\nC --&gt; J[|borders:n|Whey]\n\n\nFigure 1: Rennet Casein flow diagram\n\n\n\n\nMilk for processing into RCN has been skimmed and pasteurised.\nThe milk is mixed with rennet and incubated. Incubation is done at the optimal temperature for chymosin, which is approximately 32°C.\nOnce sufficient time has passed for the formation of curds and whey the mixture is separated using a decanter centrifuge.\nThe decanter centrifuge generates a solid mass of casein and liquid rennet whey.\nThe casein is then processed in a washing tank to reduce residual levels of lactose, salts and other components. After washing the water is removed using a decanter centrifuge.\nMultiple washing/dewatering cycles may be performed. Multi-stage washing is discussed in more detail in this Reference note.\nOnce the water has been removed the casein material is dried using an attrition drier or ring drier."
+  },
+  {
+    "objectID": "Reference/precipitate_washing.html",
+    "href": "Reference/precipitate_washing.html",
+    "title": "Multi-stage Washing",
+    "section": "",
+    "text": "Precipitated casein ingredients — like ACN and RCN — involve the separation of casein curds from liquid whey. The casein curd needs to be washed to increase purity and this often takes place in multiple stages.\nIf there is a washing stage \\(n\\) the subsequent step \\(n+1\\) will generate wash water with a lower residual lactose. Fresh water only needs to be generated for the final washing stage. This has the obvious benefit of reducing overall water use.\n\n\n\n\n\nflowchart LR\n\nA[|borders:n|Acidified milk] --&gt; B(Dewhey)\nB --&gt; C(Wash I)\nC --&gt; D(Wash II)\nD --&gt; E(Wash III)\nE --&gt; F(Casein)\n\nE --\"water\"--&gt; D\nD --\"water\"--&gt; C\n\nB --&gt; J[|borders:n|Whey]\n\nK[|borders:n|Fresh water]  --&gt;E(Wash III) \n\n\nFigure 1: Washing flow diagram"
+  },
+  {
+    "objectID": "Reference/heat_stability.html",
+    "href": "Reference/heat_stability.html",
+    "title": "Heat Stability",
+    "section": "",
+    "text": "Heat stability is an important property of dairy beverages, including but not limited to milk.\nHeat stability is a measure of the time for which a liquid system can be heated before physical manifestations of instability are observed. It is commonly measured as Heat Coagulation Time (HCT)."
+  },
+  {
+    "objectID": "Reference/heat_stability.html#explanation-of-the-ph-hct-curve",
+    "href": "Reference/heat_stability.html#explanation-of-the-ph-hct-curve",
+    "title": "Heat Stability",
+    "section": "Explanation of the pH-HCT curve",
+    "text": "Explanation of the pH-HCT curve\n\n\n\nExample dataset for a pH-HCT curve. These data would be collected using the oil bath test discussed in lectures\n\n\npH (-)\nHCT (min)\n\n\n\n\n6.0\n&lt;1\n\n\n6.2\n2\n\n\n6.4\n7\n\n\n6.6\n10\n\n\n6.7\n12\n\n\n6.8\n5\n\n\n7.0\n8\n\n\n7.2\n10\n\n\n7.4\n11\n\n\n\nAll explanations of the pH-HCT curve typically start with the max and min. Both are related to interactions occuring between casein micelles and whey proteins.\nIn the region of the max whey proteins denature during heating, which promotes their interaction with \\(\\kappa\\)-casein at the surface of micelles.\nIn the min the same interactions occur. The critical difference is that while in the first case the complexes that are formed are found on the surface of the micelles, in the second case they dissociate from the micelles and are found in the serum phase. When proteins are associated with the stabilising “hairy layer” at the micelle surface they promote stability, but when they cause dissociation of that layer they decrease stability.\n\n\n\n\n\n\nNote\n\n\n\nThis has been shown in experiments where — for example — milk samples are filtered after heating to separate the (large) micelles from the (small) whey proteins. In samples heated in the max region the whey proteins are recovered with the micelles, while in the min region small complexes of whey proteins and \\(\\kappa\\)-casein are found in the filtrate.\n\n\nOutside of these regions of min and max stability the influence of pH on calcium-ion activity is the dominant factor. As you will see in the Milk Minerals section, a significant proportion of the calcium in milk is associated with the casein micelles. This form of calcium salt is more soluble at acidic pH. Thus, as pH decreases more Ca ions dissociate into the serum phase.\n\n\n\n\n\n\nWarning\n\n\n\nIn general, an increase in the level of calcium ions will cause problems in milk protein systems that are to be heated, as the majority of milk proteins are negatively charged and therefore prone to destabilisation by positively charged ions due to charge screening and cross-bridging."
+  },
+  {
+    "objectID": "Reference/lactose_intolerance.html",
+    "href": "Reference/lactose_intolerance.html",
+    "title": "Lactose Intolerance",
+    "section": "",
+    "text": "For most mammals, milk consumption is a feature of infant life. As mammals reach maturity they no longer consume milk as a primary source of nourishment.\nPhysiologically, most mature mammals are not capable of digesting lactose, at least not in a healthy manner. This is because the activity of the enzyme needed to breakdown lactose decreases as the mammal matures.\nMost humans — like most mammals — are unable to digest lactose into maturity. An estimated 70-80% of people in the world today are lactose intolerant. This makes countries like Ireland and Sweden — where most people are not lactose intolerant — the exception rather than the rule.\nLactose intolerance is not an allergy and does not involved any immune response to lactose. The symptoms of lactose are associated with a lack of enzyme activity that results in the persistence of sugar in the intestine. The enzyme in question is \\(\\beta\\)-galactosidase or — in short — lactase. In most infants, there is sufficient lactase to hydrolyse lactose into galactose and glucose. This is important, as these mono-saccharides can permeate the intestinal barrier, while the bulkier di-saccharide lactose cannot. If lactose is hydrolysed the smaller sugars enter the bloodstream and are metabolised, but if they are not they persist in the intestine, where they generate osmotic pressure. This creates an osmotic drive that results in water being drawn into the intestine, which can lead to unpleasant symptoms (bloating, diarrhoea). In addition, lactose can be fermented by bacteria in the large intestine; like most fermentations, this results in reaction products like gases and acids, which cause further unpleasant symptoms.\n\n\n\n\n\n\nTip\n\n\n\nIt is very important to note that the symptoms of lactose intolerance are not necessarily induced on consumption of any dairy product. A person with lactose-intolerance can consume approximately 11 g/day of lactose. While a 250 mL glass of milk would likely push someone over this limit, a few slices of hard cheese may not. To understand why, consider that whey is removed during cheese- making, but most of the lactose is in the whey. In addition, during ripening, some of the residual lactose is fermented into other sugars. Thus, in terms of lactose-intolerance, not all dairy products are created equal!\n\n\nWhile lactose intolerant individuals can consume some dairy products in significant quantities (see box above), products like drinking milk can cause symptoms at low consumption levels. For this reason there are efforts to reduce lactose levels in these products. Sports supplements like casein and whey protein powders are very low in lactose (they are around 90% protein after all). These materials are low in lactose by virtue of the filtration and washing steps applied during processing, which concentrate protein and deplete everything else. To make drinking milk it is not desirable to deplete these other components to this degree (the milk would not taste very nice). A common approach is therefore to remove a proportion of lactose by ultrafiltration, and then add lactase to hydroylse the remainder of lactose. This has two clear advantages:\n\nIt reduces the level of lactose to a negligible level\nIt converts any residual lactose to sweeter sugars, compensating for the reduction in sweetness associated with the decreased lactose\n\n\n\n\n\n\n\nNote\n\n\n\nIt should be noted that lactose intolerance is different from galactosaemia, a genetic condition that causes individuals to have severe, often life-threatening reactions to the presence of galactose in a food. This condition is tested for at birth and is known to affect some demographic groups more than others, such as the Irish Traveller population. About 1 in 450 births in the traveller community are associated with galactosaemia, compared with 1 in 19,000 in the general population. Detection of this condition usually requires a highly restrictive diet to be adopted by the afflicted individual."
+  },
+  {
+    "objectID": "Reference/reference.html",
+    "href": "Reference/reference.html",
+    "title": "Reference",
+    "section": "",
+    "text": "Reference notes are designed to give you information with minimal extras or interruption.\nThere are deliberately concise in nature.\nThey are useful for getting the facts you need efficiently and are a good starting point when learning a topic.\nIt is beneficial and interesting to round out the material by reading some the Concepts, Tutorials and How-to notes that are sometimes linked inside."
+  },
+  {
+    "objectID": "Reference/wpi_process.html",
+    "href": "Reference/wpi_process.html",
+    "title": "WPI Process",
+    "section": "",
+    "text": "WPI can be produced in two ways:\n\nMembrane filtration\nIon exchange\n\n\nMembrane Filtration\nA general flow diagram for WPI by membrane filtration is shown below:\n\n\n\n\n\n\nNote\n\n\n\nThe composition of WPC and WPI, as well as their underlying process of manufacture, are subtly different, so be careful not to mix them up.\n\n\n\n\n\n\n\nflowchart LR\n\nA[|borders:n|Liquid whey] --&gt; B(Microfiltration)\n\nB --&gt; C(Ultrafiltration)\n\nC --&gt; D(Evaporation)\n\nD --&gt; E(Drying)\n\nE --&gt; F[|borders:n|WPI]\n\nB --&gt; X[|borders:n|Whey phospholipids]\n\nC --&gt; Y[|borders:n|Whey permeate]\n\nW[|borders:n|Water]--&gt; C\n\n\nFigure 1: Whey Protein Isolate flow diagram\n\n\n\n\nWhey for processing into WPI has been clarified and pasteurised.\nThe whey is microfiltered using a membrane with a pore-size of 0.1 µm to remove residual fat and phospholipids.\nThe defatted whey is ultrafiltered to concentrate protein. As whey permeate is generate the volume of WPI is decreased and the protein:lactose ratio increases.\nDiafiltration with water is required for the production of WPI using this method.\nAfter ultrafiltration/diafiltration the WPC is concentrated and dried. Care is taken during these thermal treatments to prevent excessive denaturation.\n\n\nIon-exchange\n\nThe ion-exchange process is based on the fact that at a given pH the majority of whey proteins have a similar charge (negative or positive).\nWhen passed over a stationary phase consisting of reactive groups with the opposite charge these proteins can be selectively bound while other components (e.g., lactose) pass through unimpeded.\nThe proteins can subsequently be desorbed from the column, concentrated and dried.\nFor example, after adjustment to pH &lt;4.6 most of the whey proteins are negatively charged. The exception is GMP, which has a very low isoelectric point. Choosing a column with a positively-charged set of reactive groups will allow these proteins to be bound and subsequently recovered.\nGMP is generated as an important coproduct of this proces.\nAfter recovery the proteins will be quite dilute, so they typically require ultrafiltration/diafiltration before drying."
+  },
+  {
+    "objectID": "Tutorials/tutorials.html",
+    "href": "Tutorials/tutorials.html",
+    "title": "Tutorials",
+    "section": "",
+    "text": "Tutorials aim to give you some practical knowledge about solving problems while you study the course.\nThey typically involve a problem-solving scenario, in which you apply knowledge from the course to find a solution or set of possible solutions."
+  },
+  {
+    "objectID": "Tutorials/acidWheyUse.html",
+    "href": "Tutorials/acidWheyUse.html",
+    "title": "Acid Whey Use",
+    "section": "",
+    "text": "Problem\n\n\n\nAcid whey is generated from processes in which whey is recovered following the acid-precipitation of casein. For example, acid whey is generated from the manufacture of acid casein, Greek yoghurt and cottage cheese.\nWhen casein systems are acidified there is a dissolution of calcium phosphate that would normally be associated in “insoluble” form with the casein. The solubilised calcium phosphate leaches into the whey, increasing its mineral content.\nAcid whey is challenging to process due to its high mineral content and there is a need to find methods of effectively processing the material.\n\n\nFirst consider the approximate composition of sweet whey and acid whey.\n\nLiquid whey composition\n\n\ncomponent (%)\nsweet\nacid\n\n\n\n\nsolids\n6.00\n6.40\n\n\nfat\n0.05\n0.05\n\n\nprotein\n0.60\n0.60\n\n\nlactose\n4.50\n4.60\n\n\nminerals\n0.50\n0.80\n\n\n\nThe most notable difference compared to sweet whey is the 50-60% higher level of minerals in acid whey. Lactose is still present at the highest level in both, however, making the production of whey powder or edible lactose attractive options in either case.\nFocusing on acid whey, there is a greater quantity of minerals than protein when considering the nonfat solids.\n\n\n\n\npie title Acid Whey Nonfat Solids\n    \"Protein\" : 0.6\n    \"Lactose\" : 4.6\n    \"Minerals\" : 0.8\n\n\n\n\n\nThe high level of minerals creates a problem and an opportunity. Calcium phosphate has a low solubility when conditions become more warm and/or alkaline, which is exacerbated at high concentrations. In the production of both whey powder and edible lactose there is — at a minimum — increases in temperature and concentration during an evaporation step. This can result in the formation of mineral deposits in processing equipment, resulting in negative effects on flow-rate and heat transfer, increases cleaning requirements and potential process shutdowns.\nOne strategy is to recover the minerals in a dedicated operation. For example, highly-concentrated milk mineral fractions can be recovered from acid whey by heating and alkalisation followed by recovery of milk mineral particles using either centrifuges or cyclones. Such operations can yield high quantities of a “milk mineral” ingredient while improving the processing performance of the demineralised acid whey."
+  },
+  {
+    "objectID": "Howto/howto.html",
+    "href": "Howto/howto.html",
+    "title": "How-to",
+    "section": "",
+    "text": "A how-to consists of a series of steps that — when followed correctly — reliably produces a desirable outcome.\nIt is short, focused and designed to help you do something.\nThey might involve doing a calculation, getting data or recreating a process in your kitchen.\nCompleting the steps should always lead to the same outcome.\n\n\n\n\n\n\nNote: How Kitchen Recipes Are Created on this Site\n\n\n\n\n\nAll of the recipes on this site are written in a language called Cooklang. This language was specially designed for the writing of recipes.\nRecipes are written in .cook files that can be parsed by computer programs to create ingredient tables and lists of steps.\nAs the recipe steps and table are generated simultaneously I only have to update the source .cook file and can trust that the information will be consistent.\nI can also do things like TODO notes to myself that are not shown on the website but remind me to fix up the recipe later.\nGo to the acid casein recipe page to see an example of the output.\n&gt;&gt; title: Acid Casein\n&gt;&gt; source: https://www.website.com/update-with-real-link\n&gt;&gt; description: Acid casein is an insoluble ingredient made through isoelectric precipitation of casein from skim milk.\n\nWarm @milk{500%mL} in a #pot\nuntil boiling.\n\nCool the milk for ~{5%mins}.\n\nAdd @juice{3%tbsp} to the warm milk --TODO: specify type of juice\n\nStir with #spoon \nuntil clotting is observed\n\nSeparate curds and whey using #funnel\nand #cheese cloth{}\n\nCollect the curds and whey"
+  },
+  {
+    "objectID": "Howto/fetchingData.html",
+    "href": "Howto/fetchingData.html",
+    "title": "Fetch Data from APIs",
+    "section": "",
+    "text": "There are several free APIs1 that provide useful data relevant to food manufacturing.\nWith some scripting the data can be quickly requested and converted into a form that can be shown as a table.\nHere it is demonstrated how a script can get EU data on dairy ingredient prices, which can then be shown using Observable code cells in a Quarto website or an Observable notebook."
+  },
+  {
+    "objectID": "Howto/fetchingData.html#scripting",
+    "href": "Howto/fetchingData.html#scripting",
+    "title": "Fetch Data from APIs",
+    "section": "Scripting",
+    "text": "Scripting\nThe API request is hard-coded to get price data for a specific set of ingredients (SMP, WMP, whey powder) from four European countries (Ireland, Germany, France and The Netherlands)2. The JSON data is requested using curl and converted to .csv using jq. Note: there are many other ways to achieve this request and conversion, with the Python programming language being an obvious choice.\n\n\ndairyPricesGet.sh\n\ncurl -v https://ec.europa.eu/agrifood/api/dairy/prices\\?products\\=smp,wmp,wheypowder\\&memberStateCodes\\=IE,DE,FR,NL\\&years\\=2022\\&weeks\\=5 |\njq -r '[\"Country\", \"Product\", \"Price(€)\"],\n       (.[] |\n           [.memberStateCode, (.product | gsub(\"WHEYPOWDER\"; \"WP\")), (.price | gsub(\"€\"; \"\") | tonumber | floor)]) |\n       join(\",\")' &gt; ./dairyPrices/data.csv\n\n\n\n\n\n\n\nCode Explanation\n\n\n\n\n\nLine numbers:\n\nUse curl command to get data from API and pipe into jq with |\nInvoke jq to process JSON response, use -r flag to remove quotes around strings and set headers for data\nUse .[] to loop through each element in the JSON array\nExtract fields of interest (e.g., .price), use gsub to simplify by substitution and tonumber and floor to remove decimals\nCreate comma separated values (CSV) with join(\",\") and redirect to a data.csv file\n\nThe script is saved as dairyPricesGet.sh, given executable permission with chmod +x dairyPricesGet.sh and invoked using ./dairyPricesGet.sh. It requires jq to be installed."
+  },
+  {
+    "objectID": "Howto/fetchingData.html#sec-Rendering",
+    "href": "Howto/fetchingData.html#sec-Rendering",
+    "title": "Fetch Data from APIs",
+    "section": "Rendering",
+    "text": "Rendering\nThe CSV can displayed as a table using Observable cells in Quarto or an Observable notebook. First the .csv file must be loaded:\n\nprices = FileAttachment(\"../Data/dairyPrices/data.csv\").csv({typed: true})\n\n\n\n\n\n\nThe table can then be shown sorted by product type:\n\n\n\n\n\n\n\n\n\n\n\nInputs.table(prices, {sort: \"Product\", reverse: true})\n\n\n\n\n\n\nNote how cheap the whey powder is!\n\n\n\nIngredients: WP = Whey Powder, SMP = Skim Milk Powder, WMP = Whole Milk PowderCountries: DE = Germnay, IE = Ireland, FR = France, NL = Netherlands\nA really nice feature of these tables is that the order in which the data is presented can be changed by clicking on the different column headers."
+  },
+  {
+    "objectID": "Howto/fetchingData.html#comment",
+    "href": "Howto/fetchingData.html#comment",
+    "title": "Fetch Data from APIs",
+    "section": "Comment",
+    "text": "Comment\nOne approach to getting data is to find an existing table. For example, if I looked hard enough I could find a table of dairy ingredient prices; however, this search can be time- consuming and it is easy to end up with outdated figures, especially if you don’t repeat the process at regular intervals. In addition, the table may be missing information I want and contain other information I do not want. The above approach just requires ./dairyPricesGet.sh to be executed to get the relevant data. This could also be automated further, so that it executes at regular intervals to update to the latest figures."
+  },
+  {
+    "objectID": "Howto/fetchingData.html#footnotes",
+    "href": "Howto/fetchingData.html#footnotes",
+    "title": "Fetch Data from APIs",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nApplication Programming Interface. Basically, an API contains data that can be accessed by writing a computer program that interfaces with the application in the correct way (usually outlined in its documentation)↩︎\nThe data will be taken from the official website of the European Union: see documentation↩︎"
+  },
+  {
+    "objectID": "Concepts/concFracEnrich.html",
+    "href": "Concepts/concFracEnrich.html",
+    "title": "Types of Separation",
+    "section": "",
+    "text": "It is common to hear the following five terms when discussing ingredient development:\n\nSeparation\nConcentration\nFractionation\nIsolation\nEnrichment\n\nSometimes these are used interchangeably, which can lead to confusion.\nSeparation can be considered the most general category of the five The other four are each types of separation. Any separation usually involves the processing of a feed material such that at least two outputs can be recovered.\nGiven a complex mixture, concentration usually involves an increase in the concentration of one or more components through the removal of water. Critically, this does not involve a change in the relative proportion of the solid (non-water) components.\nFractionation usually refers to changes in the relative proportions of solid components. For example, given a binary feed A+B where A is the component of interest, a process could be designed to create two outputs, with one having a proportion of A (\\(\\frac{A}{A+B} \\times 100\\)) that is increased relative to the starting feed.\nThe extent of fractionation usually determines whether a process is called “isolation” or enrichment. In the previous example, if the proportion of A exceeds 90% it might be considered an isolation process. On the other hand, if it was 60% (meaning the remaining 40% is B) then it would be considered an enrichment.\nAnother way to think about this is that isolation usually has an absolute definition (a criteria of purity for A) whereas enrichment usually has a relative definition (an enrichment of A relative to B). Isolation and purification are usually treated as synonymous.\n\n\n\n\n\n\n\nG\n\n  \n\nseparation\n\n separation   \n\nconcentration\n\n concentration   \n\nseparation–concentration\n\n   \n\ndrying\n\n drying   \n\nseparation–drying\n\n   \n\nfractionation\n\n fractionation   \n\nseparation–fractionation\n\n   \n\nenrichment\n\n enrichment   \n\nfractionation–enrichment\n\n   \n\nisolation\n\n isolation   \n\nfractionation–isolation\n\n  \n\n\n\n\n\nA last distinction is between concentration and drying. Concentration usually refers to the removal of water to increase the concentration of solids. Evaporation and reverse osmosis are concentration processes. Drying also involves the removal of water and the concentration of solids; however, the decrease in water content is so significant that it causes a physical transformation from the liquid to the solid state.\n\n\n\n\n\n\nNote\n\n\n\nClearly it could also be said that in a fractionation process the concentration of A changes relative to B.\nThat is using “concentration” in the chemical sense, whereas here we are are talking about it in the sense of a manufacturing process.\n\n\nIn summary, there is an unfortunately large number of technical terms that are used to refer to similar processes. Commonly we are dealing with some kind of separation, although the separation can vary in extent.\nIt is important to keep these distinctions in mind when dealing with complex multi-step processes. For example, a feed might be microfiltrered (fractionation) before being evporated (concentrated)."
+  },
+  {
+    "objectID": "Concepts/wheyDerivedIngredients.html",
+    "href": "Concepts/wheyDerivedIngredients.html",
+    "title": "Whey-based Ingredients",
+    "section": "",
+    "text": "Whey is a greenish-yellowish liquid traditionally generated during the production of cheeses like Cheddar.\nIt is also generated when manufacturing precipitated casein ingredients and strained yoghurts.\nThe simplest whey-based ingredient is whey powder. This is analogous to milk powder, in that it involves the transformation of a complex liquid mixture into a powder through the removal of water.\n\n\n\n\n\nflowchart LR\n\nA[|borders:n|complex mixture] --&gt; B(Dry) --&gt; C[|borders:n|powder] \nD[|borders:n|skim milk] --&gt; E(Dry) --&gt; F[|borders:n|skim milk powder] \nG[|borders:n|liquid whey] --&gt; H(Dry) --&gt; I[|borders:n|whey powder] \n\n\nFigure 1: Milk and whey are multi-component systems\n\n\n\n\nThere is no change in the relative levels of individual solid components in these processes. It is important to remember that whey powder is not equivalent to whey protein concentrate, even if these terms are used interchangeably in everyday life.\nTypical liquid whey only contains 0.5% protein, whiling having about 5.0% lactose. Drying this material by removing water will thus yield a powder that is predominately sugar. Referring to whey powder as a “protein ingredient” is therefore inaccurate and misleading."
+  },
+  {
+    "objectID": "Concepts/chemicalAndPhysical.html",
+    "href": "Concepts/chemicalAndPhysical.html",
+    "title": "Casein and Coproducts",
+    "section": "",
+    "text": "Traditionally casein was separated from milk by precipitation. There are two broad approaches to precipitation:\n\nChemical: isolectric precipitation using acid\nBiochemical: enzymatic precipitation using rennet\n\nMore recently physical methods of separation were introduced, typically relying on membranes. One advantage of physical methods is that they do not generate an insoluble material.\nBelow is a general diagram that provides an overview of the main casein-dominant ingredients that can be produced using these methods along with their co-products.\n\n\n\n\n\n\n\n\nG\n\n  \n\nskim milk\n\n skim milk   \n\nchemical\n\n chemical   \n\nskim milk–chemical\n\n   \n\nphysical\n\n physical   \n\nskim milk–physical\n\n   \n\nbiochemical\n\n biochemical   \n\nskim milk–biochemical\n\n   \n\nacid\n\n acid   \n\nchemical–acid\n\n   \n\nmembrane\n\n membrane   \n\nphysical–membrane\n\n   \n\nenzyme\n\n enzyme   \n\nbiochemical–enzyme\n\n   \n\nacid casein\n\n acid casein   \n\nacid–acid casein\n\n   \n\nacid whey\n\n acid whey   \n\nacid–acid whey\n\n   \n\nrennet casein\n\n rennet casein   \n\nenzyme–rennet casein\n\n   \n\nrennet whey\n\n rennet whey   \n\nenzyme–rennet whey\n\n   \n\nultrafiltration\n\n ultrafiltration   \n\nmembrane–ultrafiltration\n\n   \n\nmicrofiltration\n\n microfiltration   \n\nmembrane–microfiltration\n\n   \n\nalkali\n\n alkali   \n\nacid casein–alkali\n\n   \n\nsodium caseinate\n\n sodium caseinate   \n\nalkali–sodium caseinate\n\n   \n\nMPC\n\n MPC   \n\nultrafiltration–MPC\n\n   \n\nmilk permeate\n\n milk permeate   \n\nultrafiltration–milk permeate\n\n   \n\nMCC\n\n MCC   \n\nmicrofiltration–MCC\n\n   \n\nnative whey\n\n native whey   \n\nmicrofiltration–native whey\n\n  \n\n\nFigure 1: Precipitation-based methods"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Milk, Whey and their Coproducts",
+    "section": "",
+    "text": "Milk is a complex, multi-component system. In addition to traditional products like ice-cream and butter, milk is commonly transformed into a variety of dried ingredients. These range from commodities such as milk powder to more specialised ingredients like glycomacropeptide. Commodity-type ingredients are present in a wide variety of everyday foods, including bread, soups and chocolate, while specialised ingredients are often used in nutritional and medical applications.\nThis website contains notes to accompany the first half of the FS3016 module Ingredient Recovery from Milk, Whey and their Coproducts, which is taught to Food Science students at University College Cork. The module covers how dried dairy ingredients are manufactured, what waste-utilisation strategies are used and which functions specific ingredients have in food applications.\n\n\n\n\n\n\nWarning\n\n\n\nThe site is under construction.\nIt is due to be complete for students commencing their studies in January 2024."
+  },
+  {
+    "objectID": "index.html#introduction",
+    "href": "index.html#introduction",
+    "title": "Milk, Whey and their Coproducts",
+    "section": "",
+    "text": "Milk is a complex, multi-component system. In addition to traditional products like ice-cream and butter, milk is commonly transformed into a variety of dried ingredients. These range from commodities such as milk powder to more specialised ingredients like glycomacropeptide. Commodity-type ingredients are present in a wide variety of everyday foods, including bread, soups and chocolate, while specialised ingredients are often used in nutritional and medical applications.\nThis website contains notes to accompany the first half of the FS3016 module Ingredient Recovery from Milk, Whey and their Coproducts, which is taught to Food Science students at University College Cork. The module covers how dried dairy ingredients are manufactured, what waste-utilisation strategies are used and which functions specific ingredients have in food applications.\n\n\n\n\n\n\nWarning\n\n\n\nThe site is under construction.\nIt is due to be complete for students commencing their studies in January 2024."
+  },
+  {
+    "objectID": "index.html#delivery",
+    "href": "index.html#delivery",
+    "title": "Milk, Whey and their Coproducts",
+    "section": "Delivery",
+    "text": "Delivery\nThe course can be broadly divided into three sections:\n\nIntroduction to the module and commodity-type dairy products\nDetailed overview of evaporation and drying technology\nSpeciality dairy fractions and ingredient functionality\n\nThese will be covered — in turn — by Dr Shane Crowley, Dr Tom O’Callaghan and Prof Seamus O’Mahony."
+  },
+  {
+    "objectID": "index.html#assessment",
+    "href": "index.html#assessment",
+    "title": "Milk, Whey and their Coproducts",
+    "section": "Assessment",
+    "text": "Assessment\nThis module is delivered in the third year of your degree program, which is truncated because of your work placements/internships. For this reason, assessment is kept simple:\nThere is one exam at the end of semester worth 100% of your marks."
+  },
+  {
+    "objectID": "index.html#the-website",
+    "href": "index.html#the-website",
+    "title": "Milk, Whey and their Coproducts",
+    "section": "The Website",
+    "text": "The Website\nThe following sections provide some information on the design approach taken with the website.\n\nStructure\nThese notes are designed according to the Diátaxis framework. They are divided into four main categories:\n\nTutorials aim to give you some practical knowledge about solving problems while you study the course.\nHow-tos are short sets of instructions designed to help you achieve something.\nConcepts are exploratory in nature and try to connect different ideas together to form explanations.\nReference notes are designed to give you concise, factual information.\n\nIn university courses these different sections are often mixed together, resulting in large bodies of text that require students to adapt to different styles of thinking at regular intervals. Diátaxis allows these notes to be presented in smaller units that can be studied in isolation before combining them together at a later stage.\nWhile studying the module you may find different sections more helpful than others. References are essential to learn factual material but can become dry and abstract. Concepts can be interesting and refreshing but challenging to grasp quickly. Tutorials can give insights into practical applications of knowledge but may not be immediately useful. How-tos can get you some practical results quickly but they are necessarily narrow in scope.\nWhile each section has its limitations they should work together to form an effective whole. Each student may choose to integrate the information in their own way and to give themselves the best chance at succeeding in the assessment.\n\n\nFormats\nThe notes are designed both for web and pdf. Files in .pdf format will be made available (soon) to accompany the notes\nInteractive content, including slides and animations, is embedded within the notes in the web version (recommended).\nFor example, you can click through the introductory slides below.\n\n\n\n\n\nSources\nThe course notes are published as an Open-Source repository on GitHub. If you have a GitHub profile you are free to edit the material and submit your changes.\nAll diagrams are written in plain text in a /Diagrams/ folder using the Mermaid and Dot languages.\nRecipes are created using the CookLang markup language in /Recipes/. This allows them to be written in a style close to natural language before they are automatically parsed to generate lists of steps and tables of data.\nWith this setup it is easy to update diagrams and recipes, which can then be transcluded from a single source to multiple outputs (e.g., slides, web, pdf)."
+  },
+  {
+    "objectID": "index.html#content",
+    "href": "index.html#content",
+    "title": "Milk, Whey and their Coproducts",
+    "section": "Content",
+    "text": "Content\nListings are provided below for quick searching of module content."
+  },
+  {
+    "objectID": "About/about.html",
+    "href": "About/about.html",
+    "title": "About",
+    "section": "",
+    "text": "Shane is a food scientist and technologist from Cork, Ireland. He has worked full-time as an academic at UCC for six years."
+  },
+  {
+    "objectID": "About/about.html#education",
+    "href": "About/about.html#education",
+    "title": "About",
+    "section": "Education",
+    "text": "Education\nShane has a PhD in Food Science & Technology and a HDip in Philosophy, both from UCC. During his PhD he did research on nutritional ingredient development in UW-Madison, Wisconsin on a Fulbright scholarship."
+  },
+  {
+    "objectID": "About/about.html#teaching",
+    "href": "About/about.html#teaching",
+    "title": "About",
+    "section": "Teaching",
+    "text": "Teaching\nShane has taught food scientists, nutritional scientists and marketing students. He is interested in the application of technology in food and nutrition, as well as the exploration of how philosophy and programming can be applied to solving problems in food technology."
+  },
+  {
+    "objectID": "About/about.html#research",
+    "href": "About/about.html#research",
+    "title": "About",
+    "section": "Research",
+    "text": "Research\nShane’s PhD thesis focused on the development of protein and mineral ingredients for formulated nutritional products. More recently he has become interested in the broad areas of food design, food philosophy and food digitilisation."
+  },
+  {
+    "objectID": "About/about.html#interests",
+    "href": "About/about.html#interests",
+    "title": "About",
+    "section": "Interests",
+    "text": "Interests\nShane currently has a particular interest in software development and technical documentation. A recent example that combines these interests is his article on developing an interactive application that simulates Stokes’ Law."
+  },
+  {
+    "objectID": "Tables/sec1Ings.html",
+    "href": "Tables/sec1Ings.html",
+    "title": "MilkWheyAndCo",
+    "section": "",
+    "text": "Milk Powders\nCasein-based\nWhey-derived\nOther\n\n\n\n\nSkim Milk\nAcid Casein\nWhey Powder\nMicellar Casein\n\n\nWhole Milk\nRennet Casein\nWhey Protein Concentrate\nMilk Protein Concentrate\n\n\n\nCaseinate\nWhey Protein Isolate\nReduced-lactose powders\n\n\n\n\nLactose"
+  },
+  {
+    "objectID": "Concepts/driedDairy.html",
+    "href": "Concepts/driedDairy.html",
+    "title": "Dried Milk Ingredients",
+    "section": "",
+    "text": "Foods like milk are complex mixtures of many different components.\nMilk consists of almost 90% water along with molecules that can be substrates for bacteriaal growth and enzymatic activity. For these reasons, milk is highly perishable.\nDrying milk is one of the simplest methods of producing stable dairy ingredients, typically yielding a powder that will maintain an acceptable quality for approximately 24 months.\nA necessary feature of any milk powder manufacturing process is that the milk is dried to approximately 5% water.\nWhen you are trying to recall how a given powder is manufactured, it can be useful to first write down the starting material and then the final drying step. All processes we will encounter have a specific input and are finally dried into a powder.\nTo understand individual processes you will need to fill in the steps between."
+  },
+  {
+    "objectID": "Concepts/driedEmulsions.html",
+    "href": "Concepts/driedEmulsions.html",
+    "title": "Dried Emulsions",
+    "section": "",
+    "text": "Whole milk is an emulsion consisting of oil droplets dispersed in an aqueous phase.\nThe oil droplets require emulsifiers at their surface to prevent coelescence and creaming.\n\n\n\n\n\n\nMilk Structure as an Emulsion\n\n\n\nTo progress through the animation left click on the image or swipe left. The opposite motion will take you back a step.\n\n\n\n\nWhen emulsions are dried they become stable, as the droplets no longer have an aqueous medium to move through freely.\nHowever, it is important to consider that a user of the powder may encounter stability issues after the powder is reconstituted. This is one reason why whole milk is homogenised prior to drying."
+  },
+  {
+    "objectID": "Concepts/milkPowders.html",
+    "href": "Concepts/milkPowders.html",
+    "title": "Milk Powders",
+    "section": "",
+    "text": "The term “milk powder” usually refers to two specific ingredients:\n\nSkim Milk Powder (SMP)\nWhole Milk Powder (WMP)\n\nThe goal when manufacturing these ingredients is to reduce moisture. Compositionally, SMP should be equivalent to the skim milk it was made from, except that most of the water has been removed.\nIn other words: the ratio between any two nutrients — like protein and lactose — should not be altered, unless a speciality product like low-lactose milk is being made.\nWhile there is significant attention paid to isolated and fractionated ingredients, such as whey protein isolates, milk powders remain an important type of ingredient.\nTheir virtue lies in their complexity. In a bakery product milk powders can have multiple functions:\n\nLactose contributes a subtle sweetness\nMilk minerals create saltiness\nProtein-lactose reactions generate aroma and colour\n\nFor more detail on milk powder manufacture consult the references consult the references on SMP and WMP."
+  },
+  {
+    "objectID": "Concepts/concepts.html",
+    "href": "Concepts/concepts.html",
+    "title": "Concepts",
+    "section": "",
+    "text": "Notes on Concepts are exploratory in nature and try to connect different ideas together.\nThey include facts but also some general discussion that provides additional context.\nThis can involve thinking why what we are learning is important and how we can approach the topics.\nOften they push us beyond the facts, as we try to find interesting connections or directions that engage our minds."
+  },
+  {
+    "objectID": "Howto/functionality.html",
+    "href": "Howto/functionality.html",
+    "title": "Function Testing",
+    "section": "",
+    "text": "Ingredients\n\n\n\nMethod\n\n\n\n\n\n\nCode\nCL = (await import(\"https://cdn.skypack.dev/@cooklang/cooklang-ts@1.2.0?min\"))\n  .default\n\n\n\n\n\n\n\n\n\nCode\ndefaultRecipe = `&gt;&gt; title: A Cooklang Recipe\n&gt;&gt; source: https://www.anywebsite/with-details-on-the-recipe/\n\nYou add an @ingredient{} with an unspecified quantity.\n\nYou mix another @material(3%g) with a specified quantity.\n\nYou use equipment like a #bowl for certain times like ~{15%minutes}.\n\n-- NOTE: you can add comments that won't be printed`\n\n\n\n\n\n\n\n\n\nCode\nparsedRecipe = new CL.Recipe(recipeToParse)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nfunction cooklangObjectToText(s) {\n  const { type, value, name, quantity, units } = s;\n  if (type === \"ingredient\" && quantity === \"some\" && units === \"\") {\n    return `${s.name} (${s.quantity})`;\n  }\n  if (type === \"ingredient\" && units === \"\") {\n    return `${s.quantity} ${s.name}`;\n  } else if (type === \"ingredient\") {\n    return `${s.name} (${s.quantity} ${s.units})`;\n  } else if (type === \"timer\") {\n    return `${s.quantity} ${s.units}`;\n  }\n  return `${s.name} (${s.quantity}${s.units})`;\n}\n\n\n\n\n\n\n\n\n\nCode\nfunction descriptionAsHTML(recipe) {\n  const description = parsedRecipe?.metadata?.description;\n  if (description) {\n    return htl.html`&lt;br&gt;&lt;p&gt;${parsedRecipe.metadata.description}&lt;/p&gt;`;\n  }\n}\n\n\n\n\n\n\n\n\n\nCode\nfunction ingredientsAsHTML(recipe) {\n  const ingredients = recipe.ingredients ?? [];\n\n  return htl.html`&lt;table&gt;\n    &lt;tr&gt;\n        &lt;th&gt;Type&lt;/th&gt;\n        &lt;th&gt;Quantity&lt;/th&gt;\n    &lt;/tr&gt;\n ${ingredients.map((ing) =&gt; {\n   return htl.html`&lt;tr&gt;\n    &lt;td&gt;${ing?.name}&lt;/td&gt;\n    &lt;td&gt;${ing?.quantity} ${ing?.units}&lt;/td&gt;\n  &lt;/tr&gt;`;\n })}\n&lt;/table&gt;`;\n}\n\n\n\n\n\n\n\n\n\nCode\nfunction preparationAsHTML(recipe) {\n  const steps = recipe.steps ?? [];\n\n  return md`${steps\n    .map((p) =&gt; {\n      return p\n        .map((s) =&gt; {\n          return s.type === \"ingredient\" || s.type === \"timer\"\n            ? `**${cooklangObjectToText(s)}**`\n            : s.type === \"text\"\n            ? s.value\n            : s.name;\n        })\n        .join(\"\");\n    })\n    .join(\"\\n\\n\")}`;\n}\n\n\n\n\n\n\n\n\n\nCode\nfunction footerMetaAsHTML(recipe) {\n  const source = parsedRecipe?.metadata?.source;\n  if (source) {\n    return md`**Reference:**&lt;br&gt;${source}`;\n  }\n  return \"\";\n}\n\n\n\n\n\n\n\n\n\nCode\nrecipeToParse = FileAttachment(\"../Recipes/functionality.cook\").text()"
+  },
+  {
+    "objectID": "Howto/acidCasein.html",
+    "href": "Howto/acidCasein.html",
+    "title": "Acid Casein",
+    "section": "",
+    "text": "Ingredients\n\n\n\nMethod\n\n\n\n\n\n\nCode\nCL = (await import(\"https://cdn.skypack.dev/@cooklang/cooklang-ts@1.2.0?min\"))\n  .default\n\n\n\n\n\n\n\n\n\nCode\ndefaultRecipe = `&gt;&gt; title: A Cooklang Recipe\n&gt;&gt; source: https://www.anywebsite/with-details-on-the-recipe/\n\nYou add an @ingredient{} with an unspecified quantity.\n\nYou mix another @material(3%g) with a specified quantity.\n\nYou use equipment like a #bowl for certain times like ~{15%minutes}.\n\n-- NOTE: you can add comments that won't be printed`\n\n\n\n\n\n\n\n\n\nCode\nparsedRecipe = new CL.Recipe(recipeToParse)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nfunction cooklangObjectToText(s) {\n  const { type, value, name, quantity, units } = s;\n  if (type === \"ingredient\" && quantity === \"some\" && units === \"\") {\n    return `${s.name} (${s.quantity})`;\n  }\n  if (type === \"ingredient\" && units === \"\") {\n    return `${s.quantity} ${s.name}`;\n  } else if (type === \"ingredient\") {\n    return `${s.name} (${s.quantity} ${s.units})`;\n  } else if (type === \"timer\") {\n    return `${s.quantity} ${s.units}`;\n  }\n  return `${s.name} (${s.quantity}${s.units})`;\n}\n\n\n\n\n\n\n\n\n\nCode\nfunction descriptionAsHTML(recipe) {\n  const description = parsedRecipe?.metadata?.description;\n  if (description) {\n    return htl.html`&lt;br&gt;&lt;p&gt;${parsedRecipe.metadata.description}&lt;/p&gt;`;\n  }\n}\n\n\n\n\n\n\n\n\n\nCode\nfunction ingredientsAsHTML(recipe) {\n  const ingredients = recipe.ingredients ?? [];\n\n  return htl.html`&lt;table&gt;\n    &lt;tr&gt;\n        &lt;th&gt;Type&lt;/th&gt;\n        &lt;th&gt;Quantity&lt;/th&gt;\n    &lt;/tr&gt;\n ${ingredients.map((ing) =&gt; {\n   return htl.html`&lt;tr&gt;\n    &lt;td&gt;${ing?.name}&lt;/td&gt;\n    &lt;td&gt;${ing?.quantity} ${ing?.units}&lt;/td&gt;\n  &lt;/tr&gt;`;\n })}\n&lt;/table&gt;`;\n}\n\n\n\n\n\n\n\n\n\nCode\nfunction preparationAsHTML(recipe) {\n  const steps = recipe.steps ?? [];\n\n  return md`${steps\n    .map((p) =&gt; {\n      return p\n        .map((s) =&gt; {\n          return s.type === \"ingredient\" || s.type === \"timer\"\n            ? `**${cooklangObjectToText(s)}**`\n            : s.type === \"text\"\n            ? s.value\n            : s.name;\n        })\n        .join(\"\");\n    })\n    .join(\"\\n\\n\")}`;\n}\n\n\n\n\n\n\n\n\n\nCode\nfunction footerMetaAsHTML(recipe) {\n  const source = parsedRecipe?.metadata?.source;\n  if (source) {\n    return md`**Reference:**&lt;br&gt;${source}`;\n  }\n  return \"\";\n}\n\n\n\n\n\n\n\n\n\nCode\nrecipeToParse = FileAttachment(\"../Recipes/acidCasein.cook\").text()"
+  },
+  {
+    "objectID": "Howto/sodiumCaseinate.html",
+    "href": "Howto/sodiumCaseinate.html",
+    "title": "Sodium Caseinate",
+    "section": "",
+    "text": "Ingredients\n\n\n\nMethod\n\n\n\n\n\n\nCode\nCL = (await import(\"https://cdn.skypack.dev/@cooklang/cooklang-ts@1.2.0?min\"))\n  .default\n\n\n\n\n\n\n\n\n\nCode\ndefaultRecipe = `&gt;&gt; title: A Cooklang Recipe\n&gt;&gt; source: https://www.anywebsite/with-details-on-the-recipe/\n\nYou add an @ingredient{} with an unspecified quantity.\n\nYou mix another @material(3%g) with a specified quantity.\n\nYou use equipment like a #bowl for certain times like ~{15%minutes}.\n\n-- NOTE: you can add comments that won't be printed`\n\n\n\n\n\n\n\n\n\nCode\nparsedRecipe = new CL.Recipe(recipeToParse)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\nfunction cooklangObjectToText(s) {\n  const { type, value, name, quantity, units } = s;\n  if (type === \"ingredient\" && quantity === \"some\" && units === \"\") {\n    return `${s.name} (${s.quantity})`;\n  }\n  if (type === \"ingredient\" && units === \"\") {\n    return `${s.quantity} ${s.name}`;\n  } else if (type === \"ingredient\") {\n    return `${s.name} (${s.quantity} ${s.units})`;\n  } else if (type === \"timer\") {\n    return `${s.quantity} ${s.units}`;\n  }\n  return `${s.name} (${s.quantity}${s.units})`;\n}\n\n\n\n\n\n\n\n\n\nCode\nfunction descriptionAsHTML(recipe) {\n  const description = parsedRecipe?.metadata?.description;\n  if (description) {\n    return htl.html`&lt;br&gt;&lt;p&gt;${parsedRecipe.metadata.description}&lt;/p&gt;`;\n  }\n}\n\n\n\n\n\n\n\n\n\nCode\nfunction ingredientsAsHTML(recipe) {\n  const ingredients = recipe.ingredients ?? [];\n\n  return htl.html`&lt;table&gt;\n    &lt;tr&gt;\n        &lt;th&gt;Type&lt;/th&gt;\n        &lt;th&gt;Quantity&lt;/th&gt;\n    &lt;/tr&gt;\n ${ingredients.map((ing) =&gt; {\n   return htl.html`&lt;tr&gt;\n    &lt;td&gt;${ing?.name}&lt;/td&gt;\n    &lt;td&gt;${ing?.quantity} ${ing?.units}&lt;/td&gt;\n  &lt;/tr&gt;`;\n })}\n&lt;/table&gt;`;\n}\n\n\n\n\n\n\n\n\n\nCode\nfunction preparationAsHTML(recipe) {\n  const steps = recipe.steps ?? [];\n\n  return md`${steps\n    .map((p) =&gt; {\n      return p\n        .map((s) =&gt; {\n          return s.type === \"ingredient\" || s.type === \"timer\"\n            ? `**${cooklangObjectToText(s)}**`\n            : s.type === \"text\"\n            ? s.value\n            : s.name;\n        })\n        .join(\"\");\n    })\n    .join(\"\\n\\n\")}`;\n}\n\n\n\n\n\n\n\n\n\nCode\nfunction footerMetaAsHTML(recipe) {\n  const source = parsedRecipe?.metadata?.source;\n  if (source) {\n    return md`**Reference:**&lt;br&gt;${source}`;\n  }\n  return \"\";\n}\n\n\n\n\n\n\n\n\n\nCode\nrecipeToParse = FileAttachment(\"../Recipes/sodiumCaseinate.cook\").text()"
+  },
+  {
+    "objectID": "Tutorials/caseinYield.html",
+    "href": "Tutorials/caseinYield.html",
+    "title": "Casein Yield",
+    "section": "",
+    "text": "Problem\n\n\n\nThe yield from your acid casein production operation is low.\nYou are tasked with identifying any underlying causes and must propose some solutions.\n\n\nTo achieve a high yield of ACN two basic conditions must be satisfied:\n\nCasein in milk must be effectively coagulated\nCoagulated casein must be efficiently recovered\n\nWith respect to (1), the mechanism of coagulation should be considered. The mechanism involves isoelectric precipitation at pH 4.6. It follows that any deviation from this pH will result in sub-optimal coagulation, with a negative impact on yield. Routine pH monitoring would help mitigate against yield losses of this nature.\nEven if the correct pH is attained, coagulation must progress to a degree that enables effective separation of curds and whey during centrifugation. This is normally aided by a cooking step, in which the acidified milk is held at an elevated temperature until the curd particles fuse together and expel the whey. Care must be taken that the correct temperature is achieved during this step; in addition, the holding tube should be precision-engineered to consistently reach the correct holding time.\nDespite these efforts, there will still be some losses. This is why it is prudent to include a fines recovery system to capture any caseins lost during centrifugation."
+  },
+  {
+    "objectID": "Tutorials/heatClassSupply.html",
+    "href": "Tutorials/heatClassSupply.html",
+    "title": "Heat Classes",
+    "section": "",
+    "text": "Problem\n\n\n\nYour company receives an inquiry about skim milk powder.\nThey will be using the milk powder to increase the solids content of their product.\nDetermine which milk powder might be suitable for their application."
+  },
+  {
+    "objectID": "Tutorials/heatClassSupply.html#approach",
+    "href": "Tutorials/heatClassSupply.html#approach",
+    "title": "Heat Classes",
+    "section": "Approach",
+    "text": "Approach\nIt can be taken for granted that most customers will expect good standards of quality and functionality. While there are some notable exceptions, this customer will likely want an instantised powder, for example.\nThe primary distinction between SMPs is heat-classification. This determines the extent to which the casein micelles in the system are stable to external destabilising factors.\nIf the customer is developing a product that requires stability to be maintained then they should be supplied with a medium- or high-heat SMP.\nOn the other hand, if the product will be destabilised then they will likely need a low-heat SMP.\nTwo examples might be:\n\nSterilised clinical nutrition beverage: high-heat\nStandardised cheese milk: low-heat"
+  },
+  {
+    "objectID": "Reference/whey_process.html",
+    "href": "Reference/whey_process.html",
+    "title": "WP Process",
+    "section": "",
+    "text": "A general flow diagram for Whey Powder (WP) is shown below:\n\n\n\n\n\nflowchart LR\n\nA[|borders:n|Liquid Whey] --&gt; B(Evaporate)\n\nB --&gt; C(Pre-crystallisation)\n\nC --&gt; D(Drying)\n\nD --&gt; E(Drying)\n\nE --&gt; F[|borders:n|WP]\n\n\n\nFigure 1: Whey Powder flow diagram\n\n\n\n\nWhey for processing into WP has been clarified and pasteurised.\nThe whey is evaporated to 50-60% solids in an evaporator.\nThe concentrated whey is pumped into crystallisation tanks.\nTo promote lactose crystallisation the following conditions are required:\n\nSeeding with lactose crystals\nGentle agitation\nLow temperature\n\nThese conditions are carefully controlled to ensure that a suspension of fine crystals is formed.\nThe concentrated, precrystallised whey is then spray-dried into a powder."
+  },
+  {
+    "objectID": "Reference/WMP_process.html",
+    "href": "Reference/WMP_process.html",
+    "title": "WMP Process",
+    "section": "",
+    "text": "The process for Whole Milk Powder (WMP) is similar to that described for SMP but with some important differences.\nMost obviously, the starting material is whole milk rather than skim milk. The milk will have been standardised to a specific fat content of around 3.5% and pasteurised.\nDue to the significant presence of fat, milk for WMP production must be treated as an unstable emulsion. Homogenisation is therefore applied to dispersed the oil droplets into smaller sizes that float more slowly.\n\n\n\n\n\n\nNote\n\n\n\nIt might not be obvious to you why a powder would need a homogenisation step:\n\nIf it’s going to be dried anyway won’t it be stable?\n\nFor one reason, please refer to this short Concepts note.\n\n\nEvaporation proceeds as per SMP, with slightly lower solids contents achievable due to the increased viscosity imparted by the fat.\nMost WMP is spray-dried and agglomerated. Lecithination is also performed to ensure the powder has “instant” properties.\n\n\n\n\n\nflowchart LR\nA[|borders:n|Whole Milk] --&gt; B(Pre-heat)\n  B --&gt; C(Homogenise)\n  C --&gt; D(Evaporate)\n  D --&gt; E(Dry)\n  E --&gt; F[Lecithinate]\n  F --&gt; G[Package]\nG --&gt; H[|borders:n|WMP]\n\n\nFigure 1: Whole Milk Powder flow diagram"
+  },
+  {
+    "objectID": "Reference/SCN_process.html",
+    "href": "Reference/SCN_process.html",
+    "title": "SCN Process",
+    "section": "",
+    "text": "A general flow diagram for SCN is shown below:\n\n\n\n\n\nflowchart TD\nA[|borders:n|Acid casein powder] --&gt; B(dilute)\n  B --&gt; C(Colloid mill)\n  C --&gt; D(Alkalise)\n  D --&gt; E(Mix)\n  E --&gt; F(High-shear)\n  F --&gt; G(Dry)\n  G --&gt; H[|borders:n|SCN]\n\nI[|borders:n|Acid casein curd] --&gt; J(mince)\n  J --&gt; K(Dilute)\n  K --&gt; L(Colloid mill)\n  L --&gt; M(Alkalise)\n  M --&gt; N(Mix)\n  N --&gt; O(High-shear)\n  O --&gt; P(Dry)\n  P --&gt; Q[|borders:n|SCN]\n\n\n  X[|borders:n|NaOH] --&gt; D\n  Y[|borders:n|NaOH] --&gt; M\n\n\nFigure 1: Sodium Caseinate flow diagram\n\n\n\n\nThe starting material can either be in powder or curd form, which has an impact on the initial operations that are necesary.\nA colloid mill increases the surface area of the acid casein particles. Alkali is added to resolubilise the casein. High-shear mixing promotes the dissolution process.\nThroughout the SCN process two parameters are important to control:\n\nSolids: maintained &lt;20% to prevent high viscosity\nTemperature: maintained at 50°C to reduce viscosity and promote solubility\n\nAs SCN forms a solution it can be dried using conventional spray-drying; however, the solids content of the feed for the drier is much lower than for other ingredients, like SMP. Typically SCN is dried at around 20% solids, which is inefficient but necessary due to the high viscosity of the material."
+  },
+  {
+    "objectID": "Reference/wpc_process.html",
+    "href": "Reference/wpc_process.html",
+    "title": "WPC Process",
+    "section": "",
+    "text": "A general flow diagram for WPC is shown below:\n\n\n\n\n\nflowchart LR\n\nA[|borders:n|Liquid whey] --&gt; B(Ultrafiltration)\n\nB --&gt; C(Evaporation)\n\nC --&gt; D(Drying)\n\nD --&gt; E[|borders:n|WPC]\n\nW[|borders:n|Water] --&gt; B\n\nB --&gt; X[|borders:n|Whey permeate] \n\n\nFigure 1: Whey Protein Concentrate flow diagram\n\n\n\n\nWhey for processing into WPC has been clarified and pasteurised.\nThe whey is ultrafiltered using a membrane with a MWCO of 5-10 kDa.\nAs whey permeate is generate the volume of WPC is decreased and the protein:lactose ratio increases.\nFor the highest protein contents diafiltration with water is required.\nAfter ultrafiltration/diafiltration the WPC is concentrated and dried. Care is taken during these thermal treatments to prevent excessive denaturation."
+  },
+  {
+    "objectID": "Reference/ACN_process.html",
+    "href": "Reference/ACN_process.html",
+    "title": "ACN Process",
+    "section": "",
+    "text": "A general flow diagram for ACN is shown below:\n\n\n\n\n\nflowchart LR\n\nA[|borders:n|Skim Milk] --&gt; B(Pre-heat)\n\nB --&gt; C(Acidification)\n\nC --&gt; D(Dewheying)\n\nD --&gt; E(Washing)\n\nE --&gt; F(Dewatering)\n\nF --&gt; G(Drying)\n\nG --&gt; H[|borders:n|ACN]\n\nK[|borders:n|Acid] --&gt; C(Acidification)\n\nD --&gt; J[|borders:n|Whey]\n\n\nFigure 1: Acid Casein flow diagram\n\n\n\n\nMilk for processing into Acid Casein (ACN) has been skimmed and pasteurised.\nThe milk is pre-heated to 45-50°C. Acid is added until a pH of 4.6 is reached.\nOnce sufficient time has passed for the formation of curds and whey the mixture is separated using a decanter centrifuge.\nThe decanter centrifuge generates a solid mass of casein and liquid acid whey.\nThe casein is then processed in a washing tank to reduce residual levels of lactose, salts and other components. After washing the water is removed using a decanter centrifuge. For more detail on multi-stage washing view this Reference note.\nOnce the casein has been dewatered the casein material is dried using an attrition drier or ring drier.\nA fines-recovery system is often implemented before drying to improve casein yield, as described in this Reference note. This and other methods of optimising an ACN process for casein yield are discussed in this Tutorial note."
+  },
+  {
+    "objectID": "Reference/SMP_process.html",
+    "href": "Reference/SMP_process.html",
+    "title": "SMP Process",
+    "section": "",
+    "text": "A general flow diagram for skim milk powder (SMP) is shown below:\n\n\n\n\n\nflowchart LR\nA[|borders:n|Skim Milk] --&gt; B(Pre-heat)\n  B --&gt; C(Evaporate)\n  C --&gt; D(Dry)\n  D --&gt; E(Package)\nE --&gt; F[|borders:n|SMP]\n\n\nFigure 1: Skim Milk Powder flow diagram\n\n\n\n\nMilk for processing into SMP has been skimmed and pasteurised.\nPre-heating is required to attain the temperatures necessary to evaporate water from the milk.\nThe severity (time \\(\\times\\) temperature) of pre-heating also has a significant impact on functional properties of the final powder.\n\n\n\n\n\n\nHeat Classification\n\n\n\nThe heat classification of a milk powder reflects the severity of the pre-heating treatment applied.\nCommon classifications include: low-heat, medium-heat and high-heat. Low-heat SMP has a low level of denatured whey protein, while high-heat has a high level of denatured whey protein.\nDenatured whey proteins interact interact with casein micelles in the milk, which can increase stability to subsequent heating or renneting.\nMilk powders of a specific classification are often selected depending on the application.\nFor an example of how knowledge of heat classes can help guide decision-making when supplying a customer read this tutorial.\n\n\nEvaporation to between 45-50% solids is typical during evaporation. The evaporation is performed under a vacuum, permitting the removal of water at low temperatures (60-70°C). A common design of evaporator used is the falling-film evaporator.\nMost milk powders are dried using spray-driers. The concentrated milk generated by the evaporator is pumped under high pressure through a nozzle. The spray of concentrate that is generated dries rapidly as it falls through a chamber filled with dry, hot air.\nWhile the temperature of the air at the inlet can well exceed 100°C, the internal temperature of the droplet rarely exceeds &gt;70°C due to the effect of evaporative cooling.\nThe drying step is usually designed to achieve agglomeration, which improves the wetting behaviour of the powder."
+  },
+  {
+    "objectID": "Reference/fines_recovery.html",
+    "href": "Reference/fines_recovery.html",
+    "title": "Fines Recovery",
+    "section": "",
+    "text": "Processes for the manufacture of precipitated casein ingredients — like ACN and RCN — rely on centrifuges to separate casein curd particles from liquid whey.\nThe centrifuges used for dewheying and dewatering are not 100% efficient. The recovered whey and water will often contain small curd particles called “fines”.\nA “clarification” step is often applied to these streams. This has two benefits:\n\nCasein is recovered that can be reintroduced to the process to improve yield\nParticles are removed from whey making it easier to process further\n\nThe fines that are recovered can be resolubilised by alkalisation. The resultant soluble casein can then be mixed with milk that is to be converted into acid casein.\n\n\n\n\n\nflowchart LR\n\nA[|borders:n|Skim milk] --&gt; B(Acidification)\nB --&gt; C(Dewhey)\nC --&gt; D(Clarification)\nD --&gt; E[|borders:n|Clarified whey] \nD --\"fines\"--&gt;F(alkalisation) \nF--&gt;A\n\n\nFigure 1: Fines Recovery flow diagram"
+  },
+  {
+    "objectID": "Reference/milk_minerals.html",
+    "href": "Reference/milk_minerals.html",
+    "title": "Milk Minerals",
+    "section": "",
+    "text": "The mineral system of milk is incredibly complex. Its mineral content is generally represented by an ash value that is typically approximately 0.8%. This seemingly small number, however, masks the fact that there are a wide range of minerals, some of which play an out-sized role in determining the functional properties of dairy products. One of the most important milk minerals is calcium, which will be the focus of this section."
+  },
+  {
+    "objectID": "Reference/milk_minerals.html#factors-influencing-calcium-equilibria",
+    "href": "Reference/milk_minerals.html#factors-influencing-calcium-equilibria",
+    "title": "Milk Minerals",
+    "section": "Factors influencing Calcium Equilibria",
+    "text": "Factors influencing Calcium Equilibria\nThere are several factors that affect the equilibrium of calcium between the micellar and serum phase:\n\nAcidification: decreases CCP\nAlkalisation: increases CCP\nHeating: increases CCP\nCooling: decreases CCP\nConcentration: increases CCP\nCalcium fortification: increases CCP\nCalcium binder addition: decreases CCP\n\nMany other factors have been studied, including high pressure, sonication and freezing, but these will not concern us here.\nThese factors can influence quality traits of dairy products. The simplest example is the ultrafiltration of milk. When milk is ultrafiltrated all of its proteins are concentrated, along with any associated minerals, including CCP. It is possible — of course — to adjust the pH or temperature of the milk prior to filtration. By cooling we can deplete the milk of calcium (dissociated ions removed in permeate), by alkalising we can increase calcium (micellar calcium concentrated in retentate) and so on. Whether these changes are desirable will depend on the final product (nutritional beverage versus cheese versus soluble powder).\n\n\n\n\n\n\nTip\n\n\n\nRemember that CCP requires two materials to be present: casein micelles and calcium phosphate. In the absence of casein micelles, regular calcium phosphate salt will form. This is a very different thing, with very different consequences. We can concentrate milk without concern for the calcium phosphate, which will be stabilised by the micelles, but when concentrating whey the same minerals can cause problems.\n\n\nOther effects are also notable. Concentration of milk solids — by evaporation for example — results in further saturation of the serum phase with calcium and phosphate ions, resulting in CCP formation and therefore acidification:\n\\[3Ca^{2+} + 2HPO^{2-}_4 \\rightarrow Ca_3(PO_4)_2 + 2H^+\\]\nWhile the inverse operation (dilution) causes the dissociation of CCP and an increase in pH:\n\\[Ca_3(PO_4)_2 + H_2O\\rightarrow 3Ca^{2+} + 2HPO^{2-}_4 + 2OH^-\\]\nThe freezing of milk is similar to a concentration operation with respect to its effect on calcium, as water that has crystallised is unable to dissolve salts, so the remaining unfrozen water becomes supersaturated with calcium and phosphate, leading to significant CCP precipitation and extensive acidification (this is a reason why freezing of milk can cause instability)."
+  }
+]

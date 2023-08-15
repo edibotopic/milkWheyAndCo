@@ -1,0 +1,171 @@
+---
+title: Heat Stability
+categories: [reference, heat stability, denaturation, heating, milk powder, pre-heating]
+---
+
+Heat stability is an important property of dairy 
+beverages, including but not limited to milk.
+
+:::{.column-margin}
+We take that HCT is a function of pH:
+
+$$HCT = f(pH)$$
+
+but must understand that changes in $pH$
+cause an array of physicochemical changes $z_n$
+that are responsible for any decrease or 
+increase in $HCT$:
+
+$$pH \rightarrow {z_1,z_2,...,z_n}$$
+:::
+
+Heat stability is a measure of the time for 
+which a liquid system can be heated before
+physical manifestations of instability
+are observed. It is commonly measured
+as Heat Coagulation Time (HCT).
+
+# Heat Coagulation Time 
+
+[Recall my comments on the `oil bath` method of determining HCT from the lectures. The method is relatively simple and unsophisticated. While it yields valuable insights into the heat stability of samples it should not be considered a predictive test suitable for planning time-temperature combinations in a factory.]{.aside}
+
+HCT is almost always measured as a function of pH.
+A range of pH values ($n \approx 8$) are selected
+with multiple data points either side of --- and 
+including --- the natural pH of the system.
+
+For milk systems an S-shaped curve is most common.
+This curve has a well-defined *maximum* (`max`) and *minimum* (`min`).
+In general, the following observations can be made:
+
+* Low stability in acidic regions
+* High stability around native pH 
+* Recovery of stability in alkaline regions 
+
+In most practical contexts a high HCT value is 
+preferable. For this reason, regions of minimum 
+stability are systematically avoided.
+
+Decades of research have been invested in measuring
+the heat stability of liquid milk and related beverages.
+This is a testament to the complexity of the problem
+and its practical importance in the food industry.
+
+## Explanation of the pH-HCT curve 
+
+:::{.column-margin}
+| pH (-)   | HCT (min)    |
+|----- | ------ |
+| 6.0   | <1   |
+| 6.2   | 2   |
+| 6.4   | 7   |
+| 6.6   | 10   |
+| 6.7   | 12   |
+| 6.8   | 5   |
+| 7.0   | 8   |
+| 7.2   | 10   |
+| 7.4   | 11   |
+: Example dataset for a pH-HCT curve. These data would be collected using the oil bath test discussed in lectures
+:::
+
+All explanations of the pH-HCT curve typically start with 
+the `max` and `min`. Both are related to interactions
+occuring between casein micelles and whey proteins.
+
+In the region of the `max` whey proteins denature
+during heating, which promotes their interaction with
+$\kappa$-casein at the surface of micelles.
+
+In the `min` the same interactions occur. The critical
+difference is that while in the first case the complexes
+that are formed are found on the surface of the micelles,
+in the second case they dissociate from the micelles and 
+are found in the serum phase. When proteins are associated with 
+the stabilising "hairy layer" at the micelle surface they
+promote stability, but when they cause dissociation of that 
+layer they decrease stability.
+
+:::{.callout-note}
+This has been shown in experiments where --- for example --- milk 
+samples are filtered after heating to separate the (large) micelles 
+from the (small) whey proteins. In samples heated in the `max` region
+the whey proteins are recovered with the micelles, while in the `min`
+region small complexes of whey proteins and $\kappa$-casein are found 
+in the filtrate.
+:::
+
+Outside of these regions of `min` and `max` stability the influence
+of pH on calcium-ion activity is the dominant factor. As you will see 
+in the `Milk Minerals` section, a significant proportion of the calcium 
+in milk is associated with the casein micelles. This form of calcium
+salt is more soluble at acidic pH. Thus, as pH decreases more Ca ions 
+dissociate into the serum phase.
+
+:::{.callout-warning}
+In general, an increase in the level of calcium ions will cause problems
+in milk protein systems that are to be heated, as the majority of milk proteins are negatively
+charged and therefore prone to destabilisation by positively charged
+ions due to charge screening and cross-bridging.
+:::
+
+# Heat-induced changes
+
+Several physico-chemical changes occur during the heating of milk,
+including:
+
+* Acidification
+* Protein denaturation/aggregation
+* Calcium phosphate precipitation
+* Dephosphorylation of casein
+* Breakdown of urea
+
+Some of these phenomenon are better studied than others. In addition,
+there are effects that --- in a sense --- "compete" with each other 
+for influence. Understanding some of these factors can help when 
+ attempting to troubleshoot any issues relating to the destabilisation
+ of milk.
+
+One important factor is *acidification*, which is itself a function 
+of a number of causes. Firstly, calcium phosphate is less soluble
+at high temperatures, and when calcium phosphate is formed in milk 
+hydrogen ions are released causing acidification. Secondly, a 
+proportion of the lactose present in milk is chemically 
+transformed into formic acid, which also contributes to 
+acidification.
+
+It is generally taken that calcium phosphate formation has the 
+dominant role here, for the simple reason that while milk 
+reaches a very low pH when heated >100 degrees Celsius,
+the pH is generally restored to a value close to the native 
+pH of milk on cooling. As the formation of calcium phosphate is 
+reversible, but the formation of formic acid is not, this indicates
+that calcium phosphate formation plays a more important role.
+
+Another factor opposes this acidification effect, and that is the 
+breakdown of urea to ammonia. Ammonia is a buffer, and limits the 
+acidification that occurs during heating. It has been shown that 
+addition of urea either in the diet of the cow or directly in the 
+milk to be heated improves heat stability for this reason.
+
+:::{.callout-note}
+The influence of *other factors* --- maillard browning, dephosphorylation --- is less well understood. It is thought that these may have a more significant effect in extensively heated systems. As phosphate residues associated with the amino acid sequence of caseins carry a negative charge that influences colloidal stability and protein-mineral interactions any dephosphorylation can be expected to have major consequences.
+:::
+
+# Controlling Heat Stability
+
+The formulation and processing of dairy systems
+are modified for a variety of reasons. Sometimes
+these modification affect heat stability. This can 
+be by design (in an effort to enhance stability) or 
+by accident (to improve efficiency, marketability, etc.).
+
+Some of the major factors that influence heat stability during formulation and processing are:
+
+* **Pre-heating**: controlled heating of milk to denature whey proteins and associate them with the casein micelle surface is often successfully used to create heat-stable milk powders 
+* **Calcium-binders**: the addition of polyvalent anions --- such as phosphates and citrates --- that bind ionic calcium is a common strategy to improve heat stability
+* **Sodium caseinate**: recent studies have shown that this ingredent when added to milk can improve heat stability, likely due to the calcium-binding activity of caseinate 
+* **Buffer addition**: increasing the naturally-occurring levels of urea can mitigate against the effects of acidification by acting as a chemical precursor to ammonia, which has a buffering effect
+* **Concentration**: the concentration of milk solids decreases heat stability. Generally, any increase in total protein, calcium or lactose also decreases heat stability.
+* **Increasing whey protein: casein ratio**, which is common in infant formula, generally decreases stability
+
+While these factors are some of the most commonly encountered, a whole range of other factors have been studied in the literature, and you are encouraged to investigate these yourself when studying this material.

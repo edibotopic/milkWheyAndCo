@@ -1,0 +1,64 @@
+---
+title: WPI Process
+categories: [reference, whey, filtration, isolate, purity]
+---
+
+WPI can be produced in two ways:
+
+1. Membrane filtration
+2. Ion exchange
+
+# Membrane Filtration
+
+A general flow diagram for WPI by membrane filtration is shown below:
+
+::: {.callout-note}
+The composition of WPC and WPI, as well
+as their underlying process of manufacture,
+are subtly different, so be careful not to
+mix them up.
+:::
+
+```{mermaid}
+%%| label: fig-WPI-embed
+%%| fig-cap: "Whey Protein Isolate flow diagram"
+%%| file: ../Diagrams/WPI.mmd
+```
+
+Whey for processing into WPI has been clarified and
+pasteurised.
+
+The whey is microfiltered using a membrane with a pore-size
+of 0.1 µm to remove residual fat and phospholipids.
+
+The defatted whey is ultrafiltered to concentrate protein.
+As whey permeate is generate the volume of WPI is decreased
+and the protein:lactose ratio increases.
+
+Diafiltration with water is required for the production of WPI using this method.
+
+After ultrafiltration/diafiltration the WPC is concentrated and dried.
+Care is taken during these thermal treatments to prevent excessive denaturation.
+
+# Ion-exchange
+
+<!-- TODO: a little bit too much detail? -->
+
+The ion-exchange process is based on the fact that at a given
+pH the majority of whey proteins have a similar charge (negative or positive).
+
+When passed over a stationary phase consisting of reactive groups with the opposite
+charge these proteins can be selectively bound while other components (e.g., lactose)
+pass through unimpeded.
+
+The proteins can subsequently be desorbed from the column, concentrated and dried.
+
+For example, after adjustment to pH <4.6 most of the whey proteins are negatively charged.
+The exception is GMP, which has a very low isoelectric point.
+Choosing a column with a positively-charged set of reactive groups will
+allow these proteins to be bound and subsequently recovered.
+
+GMP is generated as an important coproduct of this proces.
+
+After recovery the proteins will be quite dilute, so they typically require
+ultrafiltration/diafiltration before drying.

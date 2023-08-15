@@ -1,0 +1,38 @@
+---
+title: RCN Process
+categories: [reference, casein, precipitated]
+---
+
+A general flow diagram for RCN is shown below:
+
+```{mermaid}
+%%| label: fig-RCN-embed
+%%| fig-cap: "Rennet Casein flow diagram"
+%%| file: ../Diagrams/RCN.mmd
+```
+
+Milk for processing into RCN has been skimmed and
+pasteurised.
+
+The milk is mixed with rennet and incubated.
+Incubation is done at the optimal temperature
+for chymosin, which is approximately 32°C.
+
+Once sufficient time has passed for the formation
+of curds and whey the mixture is separated using
+a decanter centrifuge.
+
+The decanter centrifuge generates a solid mass of casein
+and liquid rennet whey.
+
+The casein is then processed in a washing tank to reduce
+residual levels of lactose, salts and other components.
+After washing the water is removed using a decanter
+centrifuge.
+
+Multiple washing/dewatering cycles may be performed.
+Multi-stage washing is discussed in more detail in
+[this Reference note](./precipitate_washing.qmd).
+
+Once the water has been removed the casein material
+is dried using an attrition drier or ring drier.

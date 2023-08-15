@@ -1,0 +1,83 @@
+---
+title: Acid Whey Use
+---
+
+::: {.callout-important}
+
+## Problem
+
+Acid whey is generated from processes
+in which whey is recovered following the
+acid-precipitation of casein.
+For example, acid whey is generated from
+the manufacture of acid casein, Greek
+yoghurt and cottage cheese.
+
+When casein systems are acidified there
+is a dissolution of calcium phosphate
+that would normally be associated in
+"insoluble" form with the casein.
+The solubilised calcium phosphate
+leaches into the whey, increasing
+its mineral content.
+
+Acid whey is challenging to process due
+to its high mineral content and there is
+a need to find methods of effectively
+processing the material.
+
+:::
+
+First consider the *approximate* composition of
+sweet whey and acid whey.
+
+| component (%) | sweet  | acid  |
+|---------------|--------|--------|
+| solids        | 6.00   | 6.40   |
+| fat           | 0.05   | 0.05   |
+| protein       | 0.60   | 0.60   |
+| lactose       | 4.50   | 4.60   |
+| minerals      | 0.50   | 0.80   |
+
+: Liquid whey composition {.striped .hover}
+
+The most notable difference compared to
+sweet whey is the 50-60% higher level 
+of minerals in acid whey.
+Lactose is still present at the highest
+level in both, however, making the production
+of whey powder or edible lactose attractive
+options in either case.
+
+Focusing on acid whey, there is a 
+greater quantity of minerals than 
+protein when considering the
+nonfat solids.
+
+```{mermaid}
+pie title Acid Whey Nonfat Solids
+    "Protein" : 0.6
+    "Lactose" : 4.6
+    "Minerals" : 0.8
+```
+The high level of minerals creates a problem
+and an opportunity.
+Calcium phosphate has a low solubility when conditions
+become more warm and/or alkaline, which is exacerbated
+at high concentrations.
+In the production of both whey powder and edible lactose
+there is — at a minimum — increases in temperature and
+concentration during an evaporation step.
+This can result in the formation of mineral deposits in
+processing equipment, resulting in negative effects on
+flow-rate and heat transfer, increases cleaning requirements
+and potential process shutdowns.
+
+One strategy is to recover the minerals in a dedicated operation.
+For example, highly-concentrated milk mineral fractions can be
+recovered from acid whey by heating and alkalisation followed by
+recovery of milk mineral particles using either centrifuges or
+cyclones.
+Such operations can yield high quantities of a "milk mineral"
+ingredient while improving the processing performance of the
+demineralised acid whey.

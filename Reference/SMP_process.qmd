@@ -1,16 +1,14 @@
 ---
 title: SMP Process
+categories: [reference, milk powder, commodity]
 ---
 
-A general flow diagram for SMP is shown below:
+A general flow diagram for skim milk powder (SMP) is shown below:
 
 ```{mermaid}
-flowchart LR
-A[|borders:n|Skim Milk] --> B(Pre-heat)
-  B --> C(Evaporate)
-  C --> D(Dry)
-  D --> E(Package)
-E --> F[|borders:n|SMP]
+%%| label: fig-SMP-embed
+%%| fig-cap: "Skim Milk Powder flow diagram"
+%%| file: ../Diagrams/SMP.mmd
 ```
 
 Milk for processing into SMP has been skimmed and
@@ -38,6 +36,9 @@ milk, which can increase stability to subsequent heating or renneting.
 
 Milk powders of a specific classification are often selected depending
 on the application.
+
+For an example of how knowledge of heat classes can help
+guide decision-making when supplying a customer read [this tutorial](../Tutorials/heatClassSupply.qmd).
 :::
 
 Evaporation to between 45-50% solids is typical during evaporation.

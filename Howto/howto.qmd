@@ -1,11 +1,59 @@
 ---
 title: How-to
+categories: [how-to]
 ---
 
-A how-to is a recipe consisting of steps.
+A how-to consists of a series of steps that 
+— when followed correctly — reliably produces
+a desirable outcome.
 
-It is short and designed to help you do something.
+It is short, focused and designed to help you *do something*.
 
-They might involve doing a calculation or recreating a process in your kitchen.
+They might involve doing a calculation, getting data or recreating a process in your kitchen.
 
 Completing the steps should always lead to the same outcome.
+
+
+::: {.callout-note collapse="true"}
+
+# Note: How Kitchen Recipes Are Created on this Site
+
+All of the recipes on this site are written in a language called `Cooklang`.
+This language was specially designed for the writing of recipes.
+
+Recipes are written in `.cook` files that can be parsed by
+computer programs to create ingredient tables and lists of
+steps.
+
+As the recipe steps and table are generated simultaneously
+I only have to update the source `.cook` file and can
+trust that the information will be consistent.
+
+I can also do things like `TODO` notes to myself that
+are not shown on the website but remind me to fix up
+the recipe later.
+
+Go to [the acid casein recipe page to see an example](./acidCasein.qmd)
+of the output.
+
+```ruby
+>> title: Acid Casein
+>> source: https://www.website.com/update-with-real-link
+>> description: Acid casein is an insoluble ingredient made through isoelectric precipitation of casein from skim milk.
+
+Warm @milk{500%mL} in a #pot
+until boiling.
+
+Cool the milk for ~{5%mins}.
+
+Add @juice{3%tbsp} to the warm milk --TODO: specify type of juice
+
+Stir with #spoon 
+until clotting is observed
+
+Separate curds and whey using #funnel
+and #cheese cloth{}
+
+Collect the curds and whey
+```
+:::

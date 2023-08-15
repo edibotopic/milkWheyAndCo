@@ -1,0 +1,72 @@
+---
+title: "Introduction"
+author: "Dr Shane Crowley"
+subtitle: "FS3016"
+format:
+  revealjs: 
+    slide-number: true
+    buttons: true
+    controls: true
+    preview-links: true
+    # logo: images/quarto.png
+    footer: Milk, Whey and their Coproducts
+    theme: solarized
+search: false
+---
+
+## Drying
+
+<br>
+
+```{mermaid}
+%%| file: ../../Diagrams/SMP.mmd
+```
+
+<br>
+
+::: {.incremental}
+- ✅ Reduced spoilage
+- ✅ Decreased weight
+- ✅ Better flexibility
+:::
+
+## Commodities
+
+> A product sold by two or more companies that
+> is expected to be indistinguishable in quality
+> and functionality
+
+Milk powder is **fungible**, manufactured at **large-scale**
+and has a **well-defined identity**.
+
+## Value-added
+
+> A product that has been transformed through
+> innovations in manufacturing
+> from a less valuable to a more valuable state
+
+β-casein is **non-fungible**, manufactured at **small-scale**
+and has a **poorly-defined identity**.
+
+## Economic Continuum
+
+- **Commodities**: milk, whey and buttermilk powders
+- **Commoditised**: whey protein concentrate powders
+- **Value-added**: microparticulated whey protein
+
+## General Process Flow
+
+What are the **inputs and outputs**,
+which **operations** are required
+and how can the process be
+**optimised**?
+
+<br>
+
+```{mermaid}
+%%| file: ../../Diagrams/genFlow.mmd
+```
+
+## 
+
+{{< include ../../Tables/sec1Ings.qmd >}}

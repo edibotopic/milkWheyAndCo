@@ -1,0 +1,36 @@
+---
+title: Whey-based Ingredients
+categories: [concepts, whey]
+---
+
+Whey is a greenish-yellowish liquid traditionally
+generated during the production of cheeses like Cheddar.
+
+It is also generated when manufacturing precipitated
+casein ingredients and strained yoghurts.
+
+The simplest whey-based ingredient is **whey powder**.
+This is analogous to **milk powder**, in that it
+involves the transformation of a complex
+liquid mixture into a powder through the
+removal of water.
+
+```{mermaid}
+%%| label: fig-Cmplx-embed
+%%| fig-cap: "Milk and whey are multi-component systems"
+%%| file: ../Diagrams/complex_powders.mmd
+```
+
+There is no change in the relative levels of
+individual solid components in these processes.
+It is important to remember that **whey powder**
+is not equivalent to whey protein concentrate,
+even if these terms are used interchangeably
+in everyday life.
+
+Typical liquid whey only contains 0.5% protein,
+whiling having about 5.0% lactose.
+Drying this material by removing water will
+thus yield a powder that is predominately sugar.
+Referring to whey powder as a "protein ingredient"
+is therefore inaccurate and misleading.

@@ -1,0 +1,41 @@
+---
+title: ACN Process
+categories: [reference, casein, precipitated]
+---
+
+A general flow diagram for ACN is shown below:
+
+```{mermaid}
+%%| label: fig-ACN-embed
+%%| fig-cap: "Acid Casein flow diagram"
+%%| file: ../Diagrams/ACN.mmd
+```
+
+Milk for processing into Acid Casein (ACN) has been skimmed and
+pasteurised.
+
+The milk is pre-heated to 45-50°C.
+Acid is added until a pH of 4.6 is reached.
+
+Once sufficient time has passed for the formation
+of curds and whey the mixture is separated using
+a decanter centrifuge.
+
+The decanter centrifuge generates a solid mass of casein
+and liquid acid whey.
+
+The casein is then processed in a washing tank to reduce
+residual levels of lactose, salts and other components.
+After washing the water is removed using a decanter
+centrifuge.
+For more detail on multi-stage washing view [this Reference note](./precipitate_washing.qmd).
+
+Once the casein has been dewatered the casein material
+is dried using an attrition drier or ring drier.
+
+A fines-recovery system is often implemented
+before drying to improve casein yield, as
+described in [this Reference note](./fines_recovery.qmd).
+This and other methods of optimising an ACN
+process for casein yield are discussed in
+[this Tutorial note](../Tutorials/caseinYield.qmd).

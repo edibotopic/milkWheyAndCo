@@ -1,0 +1,14 @@
+---
+title: Function Testing
+format:
+  html:
+    code-fold: true
+    css: styles.css
+categories: [how-to, analysis]
+---
+
+{{< include ../Templates/cooklang.qmd >}}
+
+```{ojs}
+recipeToParse = FileAttachment("../Recipes/functionality.cook").text()
+```

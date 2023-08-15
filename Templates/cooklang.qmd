@@ -1,0 +1,125 @@
+:::{=html}
+${descriptionAsHTML(parsedRecipe)}
+<h2>Ingredients</h2>
+${ingredientsAsHTML(parsedRecipe)}
+
+<h2>Method</h2>
+${preparationAsHTML(parsedRecipe)} 
+
+${footerMetaAsHTML(parsedRecipe)}
+:::
+
+```{ojs}
+//| echo: false
+CL = (await import("https://cdn.skypack.dev/@cooklang/cooklang-ts@1.2.0?min"))
+  .default
+```
+
+```{ojs}
+//| echo: false
+defaultRecipe = `>> title: A Cooklang Recipe
+>> source: https://www.anywebsite/with-details-on-the-recipe/
+
+You add an @ingredient{} with an unspecified quantity.
+
+You mix another @material(3%g) with a specified quantity.
+
+You use equipment like a #bowl for certain times like ~{15%minutes}.
+
+-- NOTE: you can add comments that won't be printed`
+```
+
+```{ojs}
+//| echo: false
+parsedRecipe = new CL.Recipe(recipeToParse)
+```
+
+<!-- ```{ojs} -->
+<!-- viewof parseRecipeJSONString = Inputs.textarea({ -->
+<!--   label: "Parsed recipe as JSON", -->
+<!--   value: JSON.stringify(parsedRecipe, null, 2), -->
+<!--   rows: 30, -->
+<!--   readonly: true -->
+<!-- }) -->
+<!-- ``` -->
+
+```{ojs}
+//| echo: false
+function cooklangObjectToText(s) {
+  const { type, value, name, quantity, units } = s;
+  if (type === "ingredient" && quantity === "some" && units === "") {
+    return `${s.name} (${s.quantity})`;
+  }
+  if (type === "ingredient" && units === "") {
+    return `${s.quantity} ${s.name}`;
+  } else if (type === "ingredient") {
+    return `${s.name} (${s.quantity} ${s.units})`;
+  } else if (type === "timer") {
+    return `${s.quantity} ${s.units}`;
+  }
+  return `${s.name} (${s.quantity}${s.units})`;
+}
+```
+
+```{ojs}
+//| echo: false
+function descriptionAsHTML(recipe) {
+  const description = parsedRecipe?.metadata?.description;
+  if (description) {
+    return htl.html`<br><p>${parsedRecipe.metadata.description}</p>`;
+  }
+}
+```
+
+```{ojs}
+//| echo: false
+function ingredientsAsHTML(recipe) {
+  const ingredients = recipe.ingredients ?? [];
+
+  return htl.html`<table>
+    <tr>
+        <th>Type</th>
+        <th>Quantity</th>
+    </tr>
+ ${ingredients.map((ing) => {
+   return htl.html`<tr>
+    <td>${ing?.name}</td>
+    <td>${ing?.quantity} ${ing?.units}</td>
+  </tr>`;
+ })}
+</table>`;
+}
+
+```
+
+```{ojs}
+//| echo: false
+function preparationAsHTML(recipe) {
+  const steps = recipe.steps ?? [];
+
+  return md`${steps
+    .map((p) => {
+      return p
+        .map((s) => {
+          return s.type === "ingredient" || s.type === "timer"
+            ? `**${cooklangObjectToText(s)}**`
+            : s.type === "text"
+            ? s.value
+            : s.name;
+        })
+        .join("");
+    })
+    .join("\n\n")}`;
+}
+```
+
+```{ojs}
+//| echo: false
+function footerMetaAsHTML(recipe) {
+  const source = parsedRecipe?.metadata?.source;
+  if (source) {
+    return md`**Reference:**<br>${source}`;
+  }
+  return "";
+}
+```

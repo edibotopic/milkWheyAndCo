@@ -1,8 +1,9 @@
 ---
 title: WMP Process
+categories: [reference, milk powder, commodity, fat]
 ---
 
-The process for WMP is similar to that described for
+The process for Whole Milk Powder (WMP) is similar to that described for
 [SMP](./SMP_process.qmd) but with some important differences.
 
 Most obviously, the starting material is whole
@@ -17,6 +18,17 @@ Homogenisation is therefore applied to dispersed
 the oil droplets into smaller sizes that float
 more slowly.
 
+::: {.callout-note}
+
+It might not be obvious to you why a powder
+would need a homogenisation step:
+
+> If it's going to be dried anyway won't it be stable?
+
+For one reason, please refer to [this short Concepts note](../Concepts/driedEmulsions.qmd).
+
+:::
+
 Evaporation proceeds as per SMP, with slightly
 lower solids contents achievable due to the
 increased viscosity imparted by the fat.
@@ -26,12 +38,7 @@ Lecithination is also performed to ensure
 the powder has "instant" properties.
 
 ```{mermaid}
-flowchart LR
-A[|borders:n|Whole Milk] --> B(Pre-heat)
-  B --> C(Homogenise)
-  C --> D(Evaporate)
-  D --> E(Dry)
-  E --> F[Lecithinate]
-  F --> G[Package]
-G --> H[|borders:n|WMP]
+%%| label: fig-WMP-embed
+%%| fig-cap: "Whole Milk Powder flow diagram"
+%%| file: ../Diagrams/WMP.mmd
 ```

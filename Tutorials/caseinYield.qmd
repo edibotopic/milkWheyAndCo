@@ -1,0 +1,48 @@
+---
+title: Casein Yield
+---
+
+::: {.callout-important}
+
+## Problem
+
+The yield from your acid casein
+production operation is low.
+
+You are tasked with identifying any
+underlying causes and must propose
+some solutions.
+
+:::
+
+To achieve a high yield of ACN two
+basic conditions must be satisfied:
+
+1. Casein in milk must be effectively coagulated
+2. Coagulated casein must be efficiently recovered
+
+With respect to (1), the mechanism of coagulation
+should be considered.
+The mechanism involves isoelectric precipitation
+at pH 4.6.
+It follows that any deviation from this pH will
+result in sub-optimal coagulation, with a negative
+impact on yield.
+Routine pH monitoring would help mitigate against 
+yield losses of this nature. 
+
+Even if the correct pH is attained, coagulation
+must progress to a degree that enables effective
+separation of curds and whey during centrifugation.
+This is normally aided by a cooking step, in which
+the acidified milk is held at an elevated temperature
+until the curd particles fuse together and expel the
+whey.
+Care must be taken that the correct temperature is
+achieved during this step; in addition, the holding
+tube should be precision-engineered to consistently
+reach the correct holding time.
+
+Despite these efforts, there will still be some losses.
+This is why it is prudent to include a fines recovery system
+to capture any caseins lost during centrifugation.

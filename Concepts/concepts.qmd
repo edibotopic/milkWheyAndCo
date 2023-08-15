@@ -1,6 +1,6 @@
 ---
 title: Concepts
-categories: [stuff, things]
+categories: [concepts]
 ---
 
 Notes on Concepts are exploratory in nature and try to connect different ideas together.

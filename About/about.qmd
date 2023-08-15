@@ -1,0 +1,49 @@
+---
+title: About
+number-sections: false
+about:
+ template: jolla
+ image: about_pic.jpg
+ links:
+  - icon: github
+    text: github
+    href:
+     https://github.com/edibotopic
+  - icon: pencil-square
+    text: website
+    href:
+     https://edibotopic.com
+---
+
+Shane is a food scientist and technologist from Cork, Ireland.
+He has worked full-time as an academic at UCC for six years.
+
+## Education
+
+Shane has a PhD in Food Science & Technology and
+a HDip in Philosophy, both from UCC.
+During his PhD he did research on nutritional ingredient
+development in UW-Madison, Wisconsin on a Fulbright scholarship.
+
+## Teaching
+
+Shane has taught food scientists, nutritional scientists and 
+marketing students. He is interested
+in the application of technology in food and nutrition, as
+well as the exploration of how philosophy and programming 
+can be applied to solving problems in food technology.
+
+## Research
+
+Shane's PhD thesis focused on the development of protein and
+mineral ingredients for formulated nutritional products. More
+recently he has become interested in the broad areas of food 
+design, food philosophy and food digitilisation.
+
+## Interests
+
+Shane currently has a particular interest in software development and
+technical documentation.
+A recent example that combines these interests is his 
+[article](https://pubs.acs.org/doi/10.1021/acs.jchemed.2c01201)
+on developing an interactive application that simulates Stokes' Law.

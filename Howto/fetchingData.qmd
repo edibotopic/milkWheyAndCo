@@ -1,0 +1,122 @@
+---
+title: Fetch Data from APIs
+categories: [how-to, data science]
+---
+
+There are several free APIs[^1] that provide useful
+data relevant to food manufacturing.
+
+[^1]: **A**pplication **P**rogramming **I**nterface. Basically,
+an API contains data that can be accessed by writing
+a computer program that interfaces with the application
+in the correct way (usually outlined in its documentation)
+
+With some scripting the data can be quickly requested and
+converted into a form that can be shown as a table.
+
+Here it is demonstrated how a script can get EU data on dairy ingredient prices,
+which can then be shown using Observable code cells in a [Quarto](https://quarto.org/) 
+website or an [Observable](https://observablehq.com/) notebook.
+
+::: {.callout-warning}
+
+This is an advanced how-to that assumes some programming experience
+or a willingness to learn some programming.
+
+For a beginner to data science a good start is to register for a free
+[Observable](https://observablehq.com/) account.
+
+If you do not or cannot run the `.sh` script to fetch and convert the data
+you can [grab example CSV data here](../Data/dairyPrices/data.csv) and
+tabulate it in an Observable notebook
+using the code in @sec-Rendering (Rendering).
+:::
+
+## Scripting
+
+The API request is hard-coded to get price data for a specific set of ingredients (SMP, WMP, whey powder)
+from four European countries (Ireland, Germany, France and The Netherlands)[^2].
+The [JSON](https://ec.europa.eu/agrifood/api/dairy/prices\?products\=smp,wmp,wheypowder\&memberStateCodes\=IE,DE,FR,NL\&years\=2022\&weeks\=5) 
+data is requested using `curl` and converted to `.csv` using `jq`.
+Note: there are many other ways to achieve this request and conversion,
+with the Python programming language being an obvious choice.
+
+[^2]: The data will be taken from the official website of the European Union: [see documentation](https://agridata.ec.europa.eu/extensions/DataPortal/API_Documentation.html)
+
+```{.sh code-line-numbers="true" filename="dairyPricesGet.sh"}
+curl -v https://ec.europa.eu/agrifood/api/dairy/prices\?products\=smp,wmp,wheypowder\&memberStateCodes\=IE,DE,FR,NL\&years\=2022\&weeks\=5 |
+jq -r '["Country", "Product", "Price(€)"],
+       (.[] |
+           [.memberStateCode, (.product | gsub("WHEYPOWDER"; "WP")), (.price | gsub("€"; "") | tonumber | floor)]) |
+       join(",")' > ./dairyPrices/data.csv
+```
+
+::: {.callout-note collapse="true"}
+
+## Code Explanation
+
+Line numbers:
+
+1. Use `curl` command to get data from API and pipe into `jq` with `|`
+2. Invoke `jq` to process JSON response, use `-r` flag to remove quotes around strings and set headers for data
+3. Use `.[]` to loop through each element in the JSON array
+4. Extract fields of interest (e.g., `.price`), use `gsub` to simplify by substitution and `tonumber` and `floor` to remove decimals
+5. Create comma separated values (CSV) with `join(",")` and redirect to a `data.csv` file
+
+The script is saved as `dairyPricesGet.sh`,
+given executable permission with `chmod +x dairyPricesGet.sh`
+and invoked using `./dairyPricesGet.sh`.
+It requires `jq` to be installed.
+
+:::
+
+## Rendering {#sec-Rendering}
+
+The CSV can displayed as a table using Observable cells in Quarto
+or an Observable notebook.
+First the `.csv` file must be loaded:
+
+```{ojs}
+
+prices = FileAttachment("../Data/dairyPrices/data.csv").csv({typed: true})
+
+```
+
+The table can then be shown sorted by product type:
+
+::: {.callout}
+
+##
+
+```{ojs}
+
+Inputs.table(prices, {sort: "Product", reverse: true})
+
+```
+
+Note how cheap the whey powder is!
+
+[Ingredients: WP = Whey Powder, SMP = Skim Milk Powder, WMP = Whole Milk Powder]{.aside}
+
+[Countries: DE = Germnay, IE = Ireland, FR = France, NL = Netherlands ]{.aside}
+
+:::
+
+A really nice feature of these tables is that the
+order in which the data is presented can be changed
+by clicking on the different column headers.
+
+## Comment
+
+One approach to getting data is to find an existing table.
+For example, if I looked hard enough I could find a table
+of dairy ingredient prices; however, this search can be time-
+consuming and it is easy to end up with outdated figures,
+especially if you don't repeat the process at regular intervals.
+In addition, the table may be missing information I want and
+contain other information I do not want.
+The above approach just requires `./dairyPricesGet.sh` to be executed
+to get the relevant data.
+This could also be automated further, so that it executes at regular 
+intervals to update to the latest figures.
+

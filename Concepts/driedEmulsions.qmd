@@ -1,0 +1,46 @@
+---
+title: Dried Emulsions
+categories: [concepts, drying, emulsions]
+---
+
+Whole milk is an emulsion consisting of
+oil droplets dispersed in an aqueous phase.
+
+The oil droplets require emulsifiers at their
+surface to prevent coelescence and creaming.
+
+::: {.content-visible when-format="html"}
+
+::: {.callout-note}
+
+## Milk Structure as an Emulsion
+
+To progress through the animation **left click** on the image or **swipe left**.
+The opposite motion will take you back a step.
+
+<iframe width="100%" height="280px" src="../Spatials/emulsion.sozi.html"></iframe>
+
+:::
+
+:::
+
+::: {.content-visible when-format="pdf"}
+
+::: {.callout-note}
+
+## Milk Structure as an Emulsion
+
+Please refer to the online version of this
+page to view an interactive animation on
+emulsions.
+
+:::
+
+:::
+
+When emulsions are dried they become stable, as the droplets
+no longer have an aqueous medium to move through freely.
+
+However, it is important to consider that a user of the powder
+may encounter stability issues after the powder is reconstituted.
+This is one reason why whole milk is homogenised prior to drying.

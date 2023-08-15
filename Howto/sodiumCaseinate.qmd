@@ -1,0 +1,16 @@
+---
+title: Sodium Caseinate
+format:
+  html:
+    code-fold: true
+    css: styles.css
+categories: [how-to, caseinate]
+---
+
+{{< include ../Templates/cooklang.qmd >}}
+
+```{ojs}
+recipeToParse = FileAttachment("../Recipes/sodiumCaseinate.cook").text()
+```
+
+

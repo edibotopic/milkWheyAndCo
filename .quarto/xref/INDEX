@@ -1,30 +1,37 @@
 {
   "index.qmd": {
-    "index.html": "309a2a73"
+    "index.html": "309a2a73",
+    "index.tex": "61617d27"
   },
   "Tutorials/test1.qmd": {
     "test1.html": "c025adf2"
   },
   "Tutorials/tutorials.qmd": {
-    "tutorials.html": "c75453c9"
+    "tutorials.html": "c75453c9",
+    "tutorials.tex": "c3cf5597"
   },
   "Tutorials/tutorial-1.qmd": {
     "tutorial-1.html": "88f03090"
   },
   "Reference/reference.qmd": {
-    "reference.html": "04fbd310"
+    "reference.html": "04fbd310",
+    "reference.tex": "66e5cd9f"
   },
   "Concepts/concepts.qmd": {
-    "concepts.html": "2734feb1"
+    "concepts.html": "2734feb1",
+    "concepts.tex": "febb5ec2"
   },
   "Howto/howto.qmd": {
-    "howto.html": "f43ae71f"
+    "howto.html": "f43ae71f",
+    "howto.tex": "c1bd5b75"
   },
   "Concepts/driedDairy.qmd": {
-    "driedDairy.html": "8bc85b93"
+    "driedDairy.html": "8bc85b93",
+    "driedDairy.tex": "e6394cd7"
   },
   "Concepts/milkPowders.qmd": {
-    "milkPowders.html": "4a475d7b"
+    "milkPowders.html": "4a475d7b",
+    "milkPowders.tex": "7b3efe46"
   },
   "Reference/milkPowderManufacture.qmd": {
     "milkPowderManufacture.html": "9ee52a2d"
@@ -36,12 +43,142 @@
     "SMP_process.html": "59ba9551"
   },
   "readme.md": {
-    "readme.html": "baf56f78"
+    "readme.html": "baf56f78",
+    "readme.tex": "ddc9e549"
   },
   "Tests/p5.qmd": {
     "p5.html": "07da6d84"
   },
   "Tests/tests.qmd": {
     "tests.html": "99b4a3b4"
+  },
+  "Howto/acidCasein.qmd": {
+    "acidCasein.html": "5fe41f6b",
+    "acidCasein.tex": "2d44abf1"
+  },
+  "Tests/cooklang.qmd": {
+    "cooklang.html": "b87ea6c3"
+  },
+  "Howto/functionality.qmd": {
+    "functionality.html": "efb4389f",
+    "functionality.tex": "413d360b"
+  },
+  "Howto/lactalbumin.qmd": {
+    "lactalbumin.html": "20a731ad"
+  },
+  "Howto/sodiumCaseinate.qmd": {
+    "sodiumCaseinate.html": "843f74bc",
+    "sodiumCaseinate.tex": "14b468c5"
+  },
+  "Tests/cooklang_clean.qmd": {
+    "cooklang_clean.html": "b4bc0ba4"
+  },
+  "Templates/cooklang.qmd": {
+    "cooklang.html": "eff7484b"
+  },
+  "Reference/RCN_process.qmd": {
+    "RCN_process.html": "9332d449"
+  },
+  "Reference/ACN_process.qmd": {
+    "ACN_process.html": "0dbcf246"
+  },
+  "Reference/precipitate_washing.qmd": {
+    "precipitate_washing.html": "bbd1c156"
+  },
+  "Reference/fines_recovery.qmd": {
+    "fines_recovery.html": "096b3829"
+  },
+  "Reference/SCN_process.qmd": {
+    "SCN_process.html": "62d45f69"
+  },
+  "Concepts/chemicalAndPhysical.qmd": {
+    "chemicalAndPhysical.html": "eb77d3cd",
+    "chemicalAndPhysical.tex": "1a4b4c31"
+  },
+  "Tests/embedDiagrams.qmd": {
+    "embedDiagrams.html": "24e1e17c"
+  },
+  "about.qmd": {
+    "about.html": "7b978352"
+  },
+  "About/about.qmd": {
+    "about.html": "5d4b7962",
+    "about.tex": "733ad168"
+  },
+  "Concepts/wheyDerivedIngredients.qmd": {
+    "wheyDerivedIngredients.html": "f9c9b0b3",
+    "wheyDerivedIngredients.tex": "3ec9d977"
+  },
+  "Concepts/concFracEnrich.qmd": {
+    "concFracEnrich.html": "c9f78dcf",
+    "concFracEnrich.tex": "5b5228d5"
+  },
+  "Reference/wpi_process.qmd": {
+    "wpi_process.html": "7e3a0401"
+  },
+  "Reference/whey_process.qmd": {
+    "whey_process.html": "8f1c72ae"
+  },
+  "Reference/wpc_process.qmd": {
+    "wpc_process.html": "482a4fb7"
+  },
+  "Reference/lactose_process.qmd": {
+    "lactose_process.html": "21695d82"
+  },
+  "Tests/api_fetch.qmd": {
+    "api_fetch.html": "540cf523"
+  },
+  "Tutorials/wheyProteinFunctionalityProblem.qmd": {
+    "wheyProteinFunctionalityProblem.html": "2ad9eac5"
+  },
+  "Tutorials/caseinYieldProblem.qmd": {
+    "caseinYieldProblem.html": "d8a887b3"
+  },
+  "Tutorials/acidWheyUtilisation.qmd": {
+    "acidWheyUtilisation.html": "39c0bb6a"
+  },
+  "Tutorials/heatClassSupplyProblem.qmd": {
+    "heatClassSupplyProblem.html": "cecbba32"
+  },
+  "Tutorials/acidWheyUtilisationProblem.qmd": {
+    "acidWheyUtilisationProblem.html": "d2a23369"
+  },
+  "Tutorials/acidWheyUse.qmd": {
+    "acidWheyUse.html": "47c25bf7"
+  },
+  "Tutorials/caseinYield.qmd": {
+    "caseinYield.html": "bb5d18f6"
+  },
+  "Tutorials/heatClassSupply.qmd": {
+    "heatClassSupply.html": "f9c77a38"
+  },
+  "Concepts/driedEmulsions.qmd": {
+    "driedEmulsions.html": "b715468c",
+    "driedEmulsions.tex": "7ed99e27"
+  },
+  "Slides/two/index.qmd": {
+    "index.html": "746d49b1"
+  },
+  "Slides/one/index.qmd": {
+    "index.html": "919fad85"
+  },
+  "Tables/sec1Ings.qmd": {
+    "sec1Ings.html": "8e7f745c",
+    "sec1Ings.tex": "9e148fae"
+  },
+  "Reference/lactose_intolerance.qmd": {
+    "lactose_intolerance.html": "7e3bc089"
+  },
+  "Reference/heat_stability.qmd": {
+    "heat_stability.html": "c9f9439e"
+  },
+  "Reference/lactose_chemistry.qmd": {
+    "lactose_chemistry.html": "3a75c546"
+  },
+  "Reference/milk_minerals.qmd": {
+    "milk_minerals.html": "9b572063"
+  },
+  "Howto/fetchingData.qmd": {
+    "fetchingData.html": "c13493c9"
   }
 }

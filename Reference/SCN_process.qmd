@@ -1,0 +1,33 @@
+---
+title: SCN Process
+categories: [reference, casein, soluble]
+---
+
+A general flow diagram for SCN is shown below:
+
+```{mermaid}
+%%| label: fig-SCN-embed
+%%| fig-cap: "Sodium Caseinate flow diagram"
+%%| file: ../Diagrams/SCN.mmd
+```
+
+The starting material can either be in powder 
+or curd form, which has an impact on the initial
+operations that are necesary.
+
+A colloid mill increases the surface area of the acid casein
+particles.
+Alkali is added to resolubilise the casein.
+High-shear mixing promotes the dissolution process.
+
+Throughout the SCN process two parameters are important to
+control:
+
+- Solids: maintained <20% to prevent high viscosity
+- Temperature: maintained at 50°C to reduce viscosity and promote solubility
+
+As SCN forms a solution it can be dried using conventional spray-drying;
+however, the solids content of the feed for the drier is much lower than
+for other ingredients, like SMP.
+Typically SCN is dried at around 20% solids, which is inefficient but
+necessary due to the high viscosity of the material.

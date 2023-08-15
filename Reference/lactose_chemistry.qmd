@@ -1,0 +1,86 @@
+---
+title: Lactose Chemistry
+categories: [reference, lactose, chemistry]
+---
+
+Lactose is the primary sugar in most
+dairy products. While there is often
+a significant amount of attention
+paid to the economics of milkfat
+or the nutritional properties of 
+milk proteins, lactose remains
+an important industrial product 
+in its own right.
+
+# Basic chemistry
+
+Lactose is a di-saccharide, meaning 
+it consists of two sub-units or 
+"moieties".
+
+The moieties in this case are galactose
+and glucose, both of which are mono-
+saccharides. These are connected to 
+each other by a $\beta$ 1,4 glycosidic
+linkage.
+
+Lactose has an anomeric carbon, and the 
+orientation of the hydroxyl group around 
+this carbon determines the form of the 
+lactose (see figure).
+
+[The equilibrium between alpha and beta lactose results in a particular ratio of the two anomeric forms. You could try to find what this ratio is and the factors that influence it.]{.aside}
+
+The two anomeric forms --- $\alpha$ and $\beta$ --- have some important physical differences that
+affect their behaviour. In a solution of lactose 
+the two forms exist in an equilibrium.
+
+# Qualities
+
+Lactose is considered a "mild" sugar, in 
+that its sweetness is significantly lower
+than sugars like sucrose and glucose.
+
+A reducing sugar, lactose can participate
+in Maillard browning reactions with proteins,
+which is why lactose is frequently used in 
+bakery products where it contributes to 
+color, flavour and aroma.
+
+:::{.column-margin}
+| Sugar  | Sweetness    |
+|----- | ------ |
+| sucrose   | 1.0   |
+| fructose  | 1.2-1.8   |
+| glucose   | 0.6   |
+| maltose   | 0.5  |
+| galactose | 0.32  |
+| lactose   | 0.15-0.30   |
+: Sweetness of common sugars relative to sucrose; note that glucose and galactose are sweeter than lactose 
+:::
+
+The solubility of lactose is low relative to 
+other sugars, which can contribute to crystallisation that is a source of quality defects in dairy products and an opportunity to purify lactose in manufacturing.
+
+Lastly, lactose is an important substrate in 
+fermentations involving lactic acid bacteria, and contributes in this way to the acidification 
+reactions in yoghurt and lactic acid casein.
+
+# Solubility
+
+At ambient temperature the solubility of lactose is approximately 18.2 g/100 mL. 
+
+This solubility refers to the solubility of all 
+the lactose in the system, but it should be noted
+that lactose in solution exists in two anomeric forms simultaneously. Each of these forms has their own solubility value at a given set of environmental conditions. Generally, the beta form is more soluble than the alpha form, which makes it easy to recover the alpha form as crystals. At very high temperatures the beta form becomes less soluble, making it possible to collect beta crystals more easily.
+
+In the pharmaceutical industry both forms of lactose ingredient are supplied to different companies, depending on their needs. The initial solubility of beta-lactose is 
+higher than alpha-lactose, meaning --- for example --- that it would melt more quickly in saliva.
+
+:::{.callout-note}
+It should be noted that if a pure form of either alpha or beta lactose is dissolved in water the natural equilibrium between the two will be restored. Thus, although beta-lactose has a higher initial solubility limit than lactose, a significant proportion of it will convert into alpha-lactose in solution, meaning that the solubility limit will gradually approach that of alpha-lactose.
+:::
+
+If the concentration of lactose is increased, by removing water or adding lactose, the solution will become supersaturated and eventually crystallise.
+
+The solubility of lactose decreases as temperature is lowered. Ideal conditions for crystallisation can therefore be expected to require a low temperature as well as a concentrated system.
