@@ -1,5 +1,6 @@
 ---
 title: "Milk, Whey and their Coproducts"
+number-sections: true
 listing:
     type: table
     categories: true
@@ -31,14 +32,15 @@ The module covers how dried dairy ingredients are manufactured, what
 waste-utilisation strategies are used and which functions specific
 ingredients have in food applications.
 
-::: {.callout-warning}
+There are four hours of lectures each week at the
+following locations.
 
-The site is **under construction**.
-
-It is due to be complete for students 
-commencing their studies in January 2024.
-
-:::
+|Day   | Time   | Location       |
+|------|--------|----------------|
+|Mon   | 10am   | WW6            |
+|Mon   | 4pm    | CUMMINS\-110   |
+|Wed   | 9am    | WW5            |
+|Wed   | 11am   | WGB\-G15       |
 
 ## Delivery
 
@@ -51,6 +53,19 @@ The course can be broadly divided into three sections:
 These will be covered — in turn — by Dr Shane Crowley,
 Dr Tom O'Callaghan and Prof Seamus O'Mahony.
 
+Shane's section will be delivered primarily using 
+hand-drawn lectures in-person.
+You will be expected to take notes during these
+lectures and study the relevant notes on this
+website.
+
+::: {.callout-note}
+
+This website will be updated
+as the module progresses.
+
+:::
+
 ## Assessment
 
 This module is delivered in the third year of your degree program,
@@ -59,10 +74,18 @@ For this reason, assessment is kept simple:
 
 **There is one exam at the end of semester worth 100% of your marks.**
 
+## Content
+
+Most of the material in Shane's section will be found
+found on this website.
+
+Additional `pdf` files will also be made available on
+Canvas to help you study for the exam.
+
 ## The Website
 
 The following sections provide some information on the
-design approach taken with the website.
+approach taken when designing the website.
 
 ### Structure
 
@@ -73,6 +96,9 @@ They are divided into four main categories:
 2. **How-tos** are short sets of instructions designed to help you achieve something.
 3. **Concepts** are exploratory in nature and try to connect different ideas together to form explanations.
 4. **Reference** notes are designed to give you concise, factual information.
+
+Content in these sections can be accessed using the navigation bar.
+See @sec-search if you want to search the site using keywords.
 
 In university courses these different sections are often mixed together, resulting in large bodies of
 text that require students to adapt to different styles of thinking at regular intervals.
@@ -89,32 +115,32 @@ While each section has its limitations they should work together to form an effe
 Each student may choose to integrate the information in their own way and to give themselves
 the best chance at succeeding in the assessment.
 
-### Formats
-
-The notes are designed both for web and pdf.
-Files in `.pdf` format will be made available (soon) to accompany the notes
-
-Interactive content, including slides and animations, is embedded
-within the notes in the web version (recommended).
-
-::: {.content-visible when-format="html"}
-
-For example, you can click through the introductory slides below.
-
-<div>
-```{=html}
-<iframe class="slide-deck" src="Slides/one/"></iframe>
-```
-</div>
-
-:::
-
-::: {.content-visible when-format="pdf"}
-
-For example, on the website this section includes
-a set of interactive slides.
-
-:::
+<!-- ### Formats -->
+<!---->
+<!-- The notes are designed both for web and pdf. -->
+<!-- Files in `.pdf` format will be made available (soon) to accompany the notes -->
+<!---->
+<!-- Interactive content, including slides and animations, is embedded -->
+<!-- within the notes in the web version (recommended). -->
+<!---->
+<!-- ::: {.content-visible when-format="html"} -->
+<!---->
+<!-- For example, you can click through the introductory slides below. -->
+<!---->
+<!-- <div> -->
+<!-- ```{=html} -->
+<!-- <iframe class="slide-deck" src="Slides/one/"></iframe> -->
+<!-- ``` -->
+<!-- </div> -->
+<!---->
+<!-- ::: -->
+<!---->
+<!-- ::: {.content-visible when-format="pdf"} -->
+<!---->
+<!-- For example, on the website this section includes -->
+<!-- a set of interactive slides. -->
+<!---->
+<!-- ::: -->
 
 ### Sources
 
@@ -130,6 +156,4 @@ before they are automatically parsed to generate lists of steps and tables of da
 With this setup it is easy to update diagrams and recipes, which can then be
 transcluded from a single source to multiple outputs (e.g., slides, web, pdf).
 
-## Content
-
-Listings are provided below for quick searching of module content.
+## Search the Site {#sec-search}
