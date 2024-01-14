@@ -16,7 +16,7 @@ about:
 ---
 
 Shane is a food scientist and technologist from Cork, Ireland.
-He has worked full-time as an academic at UCC for six years.
+He has worked full-time as an academic at UCC for seven years.
 
 ## Education
 
@@ -46,4 +46,6 @@ Shane currently has a particular interest in software development and
 technical documentation.
 A recent example that combines these interests is his 
 [article](https://pubs.acs.org/doi/10.1021/acs.jchemed.2c01201)
-on developing an interactive application that simulates Stokes' Law.
+on developing an interactive application that simulates Stokes' Law,
+which is used by food scientists to study dispersed systems like
+emulsions.
